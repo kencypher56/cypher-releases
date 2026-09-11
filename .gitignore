@@ -1,0 +1,7 @@
+# Release artifacts are attached to GitHub Releases, never committed.
+dist/
+desktop/node_modules/
+desktop/out/
+installer/tools/
+installer/assets/
+node_modules/
