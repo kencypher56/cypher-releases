@@ -1,7 +1,6 @@
-# Release artifacts are attached to GitHub Releases, never committed.
+# Only the README is published. Build tooling and artifacts stay local:
+# releases are attached to GitHub Releases, not committed.
 dist/
-desktop/node_modules/
-desktop/out/
-installer/tools/
-installer/assets/
+desktop/
+installer/
 node_modules/
