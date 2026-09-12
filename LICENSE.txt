@@ -1,42 +1,75 @@
 ═══════════════════════════════════════════════════════════════════════════
   CYPHER STORE — LICENCE
-  Copyright (c) 2026 Kencypher (Muhammad Waleed Amjad). All rights reserved.
+  Copyright (c) 2026 Kencypher (Muhammad Waleed Amjad).
+  ALL RIGHTS RESERVED.
 ═══════════════════════════════════════════════════════════════════════════
 
-THIS SOFTWARE IS NOT OPEN SOURCE.
+FREE TO USE. NOT OPEN SOURCE. NOT YOURS TO REPUBLISH.
 
-This application was written by Kencypher. The source code is not published,
-not licensed to you, and not available for reuse. What you have is permission
-to run the program — nothing more.
+This software was written by Kencypher, who is its sole author and sole
+copyright holder. It costs you nothing. That is a gift, not a transfer of
+ownership, and not a grant of any right beyond the ones written below.
+
+The source code is not published, not licensed to you, and not available
+for reuse. What you are granted is permission to run the program.
 
 
 YOU MAY
 ─────────────────────────────────────────────────────────────────────────────
   • Install and run it on as many of your own machines as you like.
   • Use it for anything, including commercial work.
-  • Give an unmodified copy to a friend, free of charge.
+  • Give an unmodified copy to another person, free of charge, with this
+    notice intact.
 
 
 YOU MAY NOT, WITHOUT WRITTEN PERMISSION FROM KENCYPHER
 ─────────────────────────────────────────────────────────────────────────────
-  • Sell it, rent it, or charge anyone for access to it.
+  • Sell it, rent it, license it, or charge anyone for access to it.
   • Re-upload, mirror, or redistribute it anywhere — no app store, no
-    download site, no file host, no torrent, no "modded APK" channel.
+    download site, no file host, no torrent, no "modded APK" channel,
+    no repackaged installer.
   • Publish it under another name, or present it as your own work.
+  • Claim authorship of it, in whole or in part.
   • Rebrand it: change the name, the icon, the artwork or the credits.
   • Decompile, disassemble or reverse-engineer it, or extract its models,
-    assets or code for use in anything else.
+    assets, artwork or code for use in anything else.
+  • Train a machine-learning model on it or its assets.
   • Remove or alter this notice, or the author's name anywhere it appears.
 
 Permission is asked for, not assumed. Write to kencypher56@gmail.com.
+
+
+IF YOU BREAK THIS
+─────────────────────────────────────────────────────────────────────────────
+  Copyright in this software is owned by Kencypher and is protected without
+  registration under the Berne Convention, to which more than 180 countries
+  are party.
+
+  Re-uploading this software, repackaging it, stripping the author's name
+  from it, or passing it off as your own work is copyright infringement.
+  It is not a grey area and it is not excused by the software being free.
+
+  Any such use is pursued. That includes, without limitation:
+
+    • DMCA takedown notices to the host, the CDN, the app store and the
+      search engine carrying the material;
+    • reports to the platform for impersonation and for passing off;
+    • and where the infringement is commercial, repeated, or involves
+      falsely claiming authorship, legal proceedings for damages in the
+      appropriate jurisdiction.
+
+  Permission ends automatically the moment these terms are broken, and any
+  copy you hold after that point is an unlicensed copy.
+
+  Asking first is free, and the answer is usually yes.
 
 
 WHERE TO GET IT
 ─────────────────────────────────────────────────────────────────────────────
   There is one official source:  https://cypherstore.netlify.app
 
-  A copy from anywhere else is not one Kencypher published, and nothing
-  about its contents is guaranteed.
+  A copy from anywhere else is not one Kencypher published. Nothing about
+  its contents is guaranteed, and it is not covered by this licence.
 
 
 NO WARRANTY
@@ -47,5 +80,5 @@ NO WARRANTY
   damages or other liability arising from the software or its use.
 
 ═══════════════════════════════════════════════════════════════════════════
-  Free to use. Not free to take.
+  Free to use. Not free to take. — Kencypher, 2026
 ═══════════════════════════════════════════════════════════════════════════

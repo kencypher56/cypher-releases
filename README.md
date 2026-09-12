@@ -79,4 +79,36 @@ version. Crash reports are more useful with the steps that led to them.
 
 ## Licence
 
-The applications are free to download and use. The source is not published.
+**Free to use. Not open source. Not yours to republish.**
+
+Every application here was written by **Kencypher** (Muhammad Waleed Amjad),
+sole author and sole copyright holder. All rights reserved.
+
+You may run it on as many of your own machines as you like, use it for
+anything including commercial work, and hand an unmodified copy to a friend
+free of charge.
+
+You may **not**, without written permission:
+
+- Sell it, rent it, or charge for access to it
+- Re-upload, mirror or redistribute it anywhere — no app store, no download
+  site, no file host, no torrent, no repackaged installer
+- Publish it under another name or claim authorship of it
+- Rebrand it: change the name, icon, artwork or credits
+- Decompile it, reverse-engineer it, or extract its models and assets
+- Remove the author's name from it
+
+**This is enforced.** Re-uploading this software, repackaging it, stripping the
+author's name from it or passing it off as your own is copyright infringement —
+protected without registration under the Berne Convention — and is pursued with
+DMCA takedowns to the host, CDN, app store and search engine, platform reports
+for impersonation, and legal proceedings where the infringement is commercial,
+repeated, or involves falsely claiming authorship. Permission ends automatically
+the moment these terms are broken.
+
+Asking first is free, and the answer is usually yes: **kencypher56@gmail.com**
+
+The only official source is <https://cypherstore.netlify.app>. A copy from
+anywhere else is not one Kencypher published.
+
+Full terms: [LICENSE.txt](LICENSE.txt)
