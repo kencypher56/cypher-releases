@@ -1,6 +1,12 @@
-# Only the README is published. Build tooling and artifacts stay local:
-# releases are attached to GitHub Releases, not committed.
+# Only the README is published. Everything else here is build tooling or
+# staged application source, and the applications' source is not public.
 dist/
 desktop/
 installer/
+linux/
 node_modules/
+
+# Staging directories, wherever they appear.
+.stage/
+.stage-emp/
+.nm/
