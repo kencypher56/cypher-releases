@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════════════════════════
+  CYPHER STORE — LICENCE
+  Copyright (c) 2026 Kencypher (Muhammad Waleed Amjad). All rights reserved.
+═══════════════════════════════════════════════════════════════════════════
+
+THIS SOFTWARE IS NOT OPEN SOURCE.
+
+This application was written by Kencypher. The source code is not published,
+not licensed to you, and not available for reuse. What you have is permission
+to run the program — nothing more.
+
+
+YOU MAY
+─────────────────────────────────────────────────────────────────────────────
+  • Install and run it on as many of your own machines as you like.
+  • Use it for anything, including commercial work.
+  • Give an unmodified copy to a friend, free of charge.
+
+
+YOU MAY NOT, WITHOUT WRITTEN PERMISSION FROM KENCYPHER
+─────────────────────────────────────────────────────────────────────────────
+  • Sell it, rent it, or charge anyone for access to it.
+  • Re-upload, mirror, or redistribute it anywhere — no app store, no
+    download site, no file host, no torrent, no "modded APK" channel.
+  • Publish it under another name, or present it as your own work.
+  • Rebrand it: change the name, the icon, the artwork or the credits.
+  • Decompile, disassemble or reverse-engineer it, or extract its models,
+    assets or code for use in anything else.
+  • Remove or alter this notice, or the author's name anywhere it appears.
+
+Permission is asked for, not assumed. Write to kencypher56@gmail.com.
+
+
+WHERE TO GET IT
+─────────────────────────────────────────────────────────────────────────────
+  There is one official source:  https://cypherstore.netlify.app
+
+  A copy from anywhere else is not one Kencypher published, and nothing
+  about its contents is guaranteed.
+
+
+NO WARRANTY
+─────────────────────────────────────────────────────────────────────────────
+  Provided as is, without warranty of any kind, express or implied,
+  including but not limited to merchantability, fitness for a particular
+  purpose and non-infringement. The author is not liable for any claim,
+  damages or other liability arising from the software or its use.
+
+═══════════════════════════════════════════════════════════════════════════
+  Free to use. Not free to take.
+═══════════════════════════════════════════════════════════════════════════

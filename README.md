@@ -6,7 +6,7 @@ Downloads for the Cypher applications, by [Kencypher](https://github.com/kencyph
 the builds are produced elsewhere and published to the Releases page.
 
 > Full feature lists, screenshots and setup guides for every app live on the
-> site: **https://kencypher.netlify.app**
+> site: **https://cypherstore.netlify.app**
 
 ---
 
