@@ -15,13 +15,18 @@ the builds are produced elsewhere and published to the Releases page.
 | App | Android | Windows | Linux | What it is |
 |---|:--:|:--:|:--:|---|
 | **Cypher Music** | ✅ | ✅ | ✅ | Offline music and video library, a downloader for hundreds of sites, and a vocal/instrumental splitter |
-| **Cypher BOT** | ✅ | ✅ | ✅ | Turns a Reddit thread into a narrated short video with character voices |
+| **Cypher BOT** | — | ✅ | ✅ | Turns a Reddit thread into a narrated short video with character voices |
 | **Cypher Contacts** | ✅ | ✅ | ✅ | Contacts manager that exports and imports in eleven formats |
 | **Cypher Expenses** | ✅ | ✅ | ✅ | Expense and income tracker that produces a real PDF statement |
 | **Cypher HR** | — | ✅ | ✅ | Desktop HR, attendance and payroll, reading a ZKTeco terminal |
 
 Cypher HR has no Android build: it is a desktop workflow backed by a
 PostgreSQL database.
+
+Cypher BOT's Android build is not published yet. It is finished, but every
+character voice is packed inside it, which puts the APK at 2.39 GB — and no
+release file may be over 2 GB. The build that fetches those voices instead
+(the same pack the desktop version uses) is what will bring it under.
 
 ---
 
