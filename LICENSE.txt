@@ -66,7 +66,7 @@ IF YOU BREAK THIS
 
 WHERE TO GET IT
 ─────────────────────────────────────────────────────────────────────────────
-  There is one official source:  https://cypherstore.netlify.app
+  There is one official source:  https://cypherstore.vercel.app
 
   A copy from anywhere else is not one Kencypher published. Nothing about
   its contents is guaranteed, and it is not covered by this licence.
