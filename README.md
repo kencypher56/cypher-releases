@@ -6,7 +6,7 @@ Downloads for the Cypher applications, by [Kencypher](https://github.com/kencyph
 the builds are produced elsewhere and published to the Releases page.
 
 > Full feature lists, screenshots and setup guides for every app live on the
-> site: **https://cypherstore.netlify.app**
+> site: **https://cypherstore.vercel.app**
 
 ---
 
@@ -113,7 +113,7 @@ the moment these terms are broken.
 
 Asking first is free, and the answer is usually yes: **kencypher56@gmail.com**
 
-The only official source is <https://cypherstore.netlify.app>. A copy from
+The only official source is <https://cypherstore.vercel.app>. A copy from
 anywhere else is not one Kencypher published.
 
 Full terms: [LICENSE.txt](LICENSE.txt)
