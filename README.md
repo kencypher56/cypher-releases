@@ -18,6 +18,7 @@ the builds are produced elsewhere and published to the Releases page.
 | **Cypher BOT** | ✅ | ✅ | ✅ | Turns a Reddit thread into a narrated short video with character voices |
 | **Cypher Contacts** | ✅ | ✅ | ✅ | Contacts manager that exports and imports in eleven formats |
 | **Cypher Expenses** | ✅ | ✅ | ✅ | Expense and income tracker that produces a real PDF statement |
+| **Cypher Share** | ✅ | ✅ | ✅ | Sends files and whole folders between your computers and phones over your own network, at full speed |
 | **Cypher HR** | — | ✅ | ✅ | Desktop HR, attendance and payroll, reading a ZKTeco terminal |
 
 Cypher HR has no Android build: it is a desktop workflow backed by a
