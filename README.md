@@ -19,10 +19,13 @@ the builds are produced elsewhere and published to the Releases page.
 | **Cypher Contacts** | ✅ | ✅ | ✅ | Contacts manager that exports and imports in eleven formats |
 | **Cypher Expenses** | ✅ | ✅ | ✅ | Expense and income tracker that produces a real PDF statement |
 | **Cypher Share** | ✅ | ✅ | ✅ | Sends files and whole folders between your computers and phones over your own network, at full speed |
+| **Cypher Tools** | ✅ | ✅ | ✅ | 68 offline tools for PDFs, Office files, images, audio, video and archives |
 | **Cypher HR** | — | ✅ | ✅ | Desktop HR, attendance and payroll, reading a ZKTeco terminal |
+| **Cypher-ZKTeko** | — | ✅ | ✅ | Desktop console for ZKTeco attendance terminals, with Excel and PDF reports |
+| **Cypher Visualizer** | — | ✅ | ✅ | Draws whatever your computer is playing as light on the desktop |
 
-Cypher HR has no Android build: it is a desktop workflow backed by a
-PostgreSQL database.
+Cypher HR, Cypher-ZKTeko and Cypher Visualizer have no Android build: they
+are desktop apps that work with a terminal, a database or the desktop itself.
 
 
 ---
