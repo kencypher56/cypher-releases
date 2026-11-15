@@ -1,0 +1,27 @@
+name: Rebuild Cypher Store
+
+# The site reads this repository's releases when it builds, so a published,
+# edited or deleted release only needs a rebuild to show up on
+# cypherstore.vercel.app. Run it by hand after `gh release upload` too:
+#   gh workflow run "Rebuild Cypher Store" --repo kencypher56/cypher-releases
+on:
+  release:
+    types: [published, edited, deleted]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ask Vercel to rebuild the site
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::Add the VERCEL_DEPLOY_HOOK secret (the site's Vercel deploy hook URL)."
+            exit 1
+          fi
+          curl --fail --silent --show-error --max-time 30 -X POST "$HOOK" > /dev/null
+          echo "Vercel is rebuilding cypherstore.vercel.app."
