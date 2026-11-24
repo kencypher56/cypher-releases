@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-music</id>
+    <version>2.141</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Music</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-music</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-music-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-music music-player video-player audio downloader vocal-remover stem-separation karaoke offline</tags>
+    <summary>Offline music and video player with a link downloader and an on-device vocal and instrument separator.</summary>
+    <description>Cypher Music is a full offline media library — songs, albums, artists, playlists and videos, all scanned from the machine it runs on. On top of the player it carries two things most players do not: a downloader that pulls audio or video from hundreds of sites, and a vocal and instrument separator that pulls a finished track apart into its vocal and instrumental stems. Both of them run on your own computer or phone, with nothing uploaded anywhere.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-music-v2.141</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

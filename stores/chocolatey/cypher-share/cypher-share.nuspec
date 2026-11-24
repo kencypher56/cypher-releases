@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-share</id>
+    <version>3.1.0</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Share</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-share</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-share-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-share file-transfer file-sharing lan wifi android folders offline</tags>
+    <summary>Sends files and whole folders between your computers and your phone, at the full speed of your own network.</summary>
+    <description>Cypher Share moves files and entire folder trees between Windows and Linux computers and Android phones on the same local network. Start it on two devices and they find each other by themselves: there is no account, no pairing code and no server in the middle. Pick what to send, tap the device, and the receiver decides what comes in. The data travels device to device over parallel connections and never leaves your network.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-share-v3.1.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

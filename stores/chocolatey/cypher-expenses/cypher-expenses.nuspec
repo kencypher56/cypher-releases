@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-expenses</id>
+    <version>3.11</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Expenses</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-expenses</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-expenses-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-expenses expenses budget finance money ledger pdf-reports offline</tags>
+    <summary>Records expenses and money in, and turns them into statements and PDF reports.</summary>
+    <description>Money in, money out, and an honest answer to where it went. Cypher Expenses keeps a running balance, breaks spending down by category, and exports a detailed or summary statement as a PDF for any date range. Everything is stored on the device and it never asks you to make an account.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-expenses-v3.11</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

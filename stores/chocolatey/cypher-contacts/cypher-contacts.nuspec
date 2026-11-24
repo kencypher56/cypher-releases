@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-contacts</id>
+    <version>1.18</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Contacts</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-contacts</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-contacts-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-contacts contacts address-book vcard csv export import backup offline</tags>
+    <summary>Exports your address book eleven ways and imports it back, on your own device.</summary>
+    <description>Most phones will happily show you your contacts and then fight you when you try to take them somewhere else. Cypher Contacts is built around the opposite idea: browse and edit normally, then export the whole address book into whatever format the next tool actually reads — and import it back the same way.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-contacts-v1.18</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

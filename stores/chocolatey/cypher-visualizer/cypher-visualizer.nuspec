@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-visualizer</id>
+    <version>1.1.0</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Visualizer</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-visualizer</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-visualizer-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-visualizer audio-visualizer visualizer music overlay desktop spectrum</tags>
+    <summary>A real-time visualizer for whatever your computer is playing, drawn in a small desktop overlay.</summary>
+    <description>Cypher Visualizer turns whatever your computer is already playing, from YouTube and Spotify to VLC and games, into a live visualization in a corner of your desktop. There is no window around it, no background and nothing to click: the mouse goes straight through to whatever sits underneath. Thirty visualizers, from GLava-style bars to 3D tunnels, follow the bass, mids and treble as they happen.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-visualizer-v1.1.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

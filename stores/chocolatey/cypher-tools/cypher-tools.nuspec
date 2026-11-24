@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-tools</id>
+    <version>1.1.0</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Tools</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-tools</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-tools-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-tools pdf converter image-converter video-converter audio-converter office archive offline</tags>
+    <summary>Sixty-eight offline tools for PDFs, Office files, images, audio, video and archives. Drop a file, pick a tool, done.</summary>
+    <description>Cypher Tools is one toolbox for the file jobs that usually send you to a website: MP4 to MP3, Word to PDF, PDF to Excel, signing a PDF, shrinking photos, ZIP to RAR. Drop a file and it shows the tools that fit. All 68 tools run on your own device, with no account and no upload, and the result lands next to the original without touching it. On a PC it drives real engines: a bundled ffmpeg, Microsoft Office or LibreOffice, and WinRAR.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-tools-v1.1.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
