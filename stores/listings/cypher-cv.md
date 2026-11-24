@@ -13,6 +13,7 @@ Every sentence below comes from the Cypher Store website (site/projects.apps.js)
 | Privacy policy | **None published yet.** Huawei AppGallery and Samsung Galaxy Store require a privacy policy URL. |
 | Suggested category | Business / Office |
 | Requirements | Windows 10/11 (64-bit); Linux (x64) |
+| Windows testing | **On hold for Windows stores.** Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold. |
 | Price | Free; no ads (as the website says) |
 
 ## Versions and files

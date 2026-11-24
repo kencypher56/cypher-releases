@@ -39,6 +39,16 @@ test('an Inno installer gets WinGet manifests and a Chocolatey package with unin
   assert.match(out.files['chocolatey/cypher-music/cypher-music.nuspec'], /<version>2\.141<\/version>/);
 });
 
+test('an exe on hold is prepared but sent to no Windows store', async () => {
+  const out = await build(cfg, release('cypher-cv-v1.0.0', ['CypherCV-1.0.0.exe', 'CypherCV-1.0.0-x86_64.AppImage']));
+  assert.equal(out.exe, true);
+  assert.equal(out.wingetId, '');
+  assert.equal(out.chocoId, '');
+  assert.equal(out.exeHold, true);
+  assert.match(out.files['summary.md'], /Windows stores on hold/);
+  assert.ok(out.files['winget/manifests/k/Kencypher/CypherCV/1.0.0/Kencypher.CypherCV.installer.yaml']);
+});
+
 test('a portable exe gets a portable manifest and a shim, no uninstaller', async () => {
   const out = await build(cfg, release('cypher-cv-v1.0.0', ['CypherCV-1.0.0.exe', 'CypherCV-1.0.0-x86_64.AppImage']));
   const inst = out.files['winget/manifests/k/Kencypher/CypherCV/1.0.0/Kencypher.CypherCV.installer.yaml'];

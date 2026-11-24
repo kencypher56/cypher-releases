@@ -13,6 +13,8 @@ set -euo pipefail
 
 here=$(cd "$(dirname "$0")" && pwd)
 me=$(gh api user --jq .login)
+# Packages whose exe is on hold in apps.json go only when named on the command line.
+held=$(node -e 'const a=require(process.argv[1]).apps; for (const k in a) if (a[k].exe?.hold && a[k].wingetId) console.log(a[k].wingetId.split(".")[1])' "$here/apps.json")
 
 if ! gh api "repos/$me/winget-pkgs" --silent 2>/dev/null; then
   gh repo fork microsoft/winget-pkgs --clone=false
@@ -24,6 +26,7 @@ base=$(gh api "repos/$me/winget-pkgs/git/ref/heads/master" --jq .object.sha)
 for dir in "$here"/winget/manifests/k/Kencypher/*/*/; do
   dir=${dir%/}; ver=$(basename "$dir"); pkg=$(basename "$(dirname "$dir")"); id="Kencypher.$pkg"
   if [ $# -gt 0 ] && [[ " $* " != *" $pkg "* ]]; then continue; fi
+  if [ $# -eq 0 ] && grep -qx "$pkg" <<<"$held"; then echo "$id is on hold (see stores/apps.json); name it to send it anyway"; continue; fi
   path="manifests/k/Kencypher/$pkg/$ver"
 
   if gh api "repos/microsoft/winget-pkgs/contents/$path" --silent 2>/dev/null; then

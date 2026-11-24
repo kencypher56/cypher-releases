@@ -4,6 +4,8 @@ Everything that can be prepared without your accounts is here. Accounts, terms, 
 
 Listing text, icons, screenshots and release notes for each app: `stores/listings/<app>.md`. Status of every app on every store: `stores/REPORT.md`.
 
+**On hold: Cypher CV and Cypher Printers for Windows.** Their READMEs say the Windows builds were tested only under Wine, and Printers' driver steps still need a real Windows 10/11 run. Their WinGet and Chocolatey files are prepared, but the workflow, `submit-winget.sh` and SourceForge all skip their EXEs. After testing on real Windows, delete the `hold` line for that app in `stores/apps.json`. Their Linux AppImages are not held.
+
 ## WinGet (Windows)
 
 1. Open the first pull request for every package. This forks microsoft/winget-pkgs if you have no fork yet:
@@ -29,7 +31,7 @@ Listing text, icons, screenshots and release notes for each app: `stores/listing
    ```
 
    ```bash
-   for t in cypher-music-v2.141 cypher-contacts-v1.18 cypher-expenses-v3.11 cypher-tools-v1.1.0 cypher-share-v3.1.0 cypher-visualizer-v1.1.0 cypher-cv-v1.0.0 cypher-printers-v1.0.0; do gh workflow run "Publish to stores" --repo kencypher56/cypher-releases -f tag=$t; done
+   for t in cypher-music-v2.141 cypher-contacts-v1.18 cypher-expenses-v3.11 cypher-tools-v1.1.0 cypher-share-v3.1.0 cypher-visualizer-v1.1.0; do gh workflow run "Publish to stores" --repo kencypher56/cypher-releases -f tag=$t; done
    ```
 
 3. New packages wait for human moderation before they are public.
@@ -41,7 +43,7 @@ Listing text, icons, screenshots and release notes for each app: `stores/listing
 3. Add an SSH public key under Account Settings › SSH Settings.
 4. Run `ssh-keyscan frs.sourceforge.net` and check its fingerprints against SourceForge's documentation.
 5. Store the secrets: `SF_USER` (your user name), `SF_SSH_KEY` (the private key), `SF_KNOWN_HOSTS` (the checked keyscan output) and, optionally, `SF_API_KEY` (Account › Release API key, which sets the default downloads).
-6. Run the workflow for each tag, as in the Chocolatey loop, adding `cypher-share-v3.1.1` and `cypher-trainer-v1.0.0`.
+6. Run the workflow for each tag, as in the Chocolatey loop, adding `cypher-share-v3.1.1`, `cypher-trainer-v1.0.0`, `cypher-cv-v1.0.0` and `cypher-printers-v1.0.0` (the last two send only their AppImages while the hold is on).
 
 Files already on SourceForge are never replaced.
 

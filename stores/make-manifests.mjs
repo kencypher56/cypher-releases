@@ -158,6 +158,7 @@ const STORES = {
 
 function summary(app, version, release, files) {
   const lines = [`## ${app.name} ${version}`, '', `Release: ${release.html_url}`, ''];
+  if (files.exe && app.exe?.hold) lines.push(`**Windows stores on hold:** ${app.exe.hold}`, '');
   for (const kind of Object.keys(STORES)) {
     const f = files[kind];
     if (!f) continue;
@@ -182,10 +183,12 @@ export async function build(cfg, release, fetchText) {
     Object.assign(out, wingetFiles(cfg, app, slug, version, found.exe, release));
     Object.assign(out, chocolateyFiles(cfg, app, slug, version, found.exe, release));
   }
+  // A held exe still gets its files, for review, but no store job runs for it.
+  const send = found.exe && !app.exe?.hold;
   const result = {
     listed: true, slug, version, tag: release.tag_name, name: app.name,
     exe: !!found.exe, appimage: !!found.appimage, apk: !!found.apk,
-    wingetId: (found.exe && app.wingetId) || '', chocoId: (found.exe && app.chocoId) || '',
+    wingetId: (send && app.wingetId) || '', chocoId: (send && app.chocoId) || '', exeHold: !!(found.exe && !send),
     sourceforge: app.sourceforge || '', files: found
   };
   out['formats.json'] = JSON.stringify(result, null, 2) + '\n';
@@ -220,7 +223,7 @@ async function main(argv) {
     mkdirSync(dirname(join(outDir, rel)), { recursive: true });
     writeFileSync(join(outDir, rel), text);
   }
-  const keys = ['listed', 'slug', 'version', 'tag', 'name', 'exe', 'appimage', 'apk', 'wingetId', 'chocoId', 'sourceforge'];
+  const keys = ['listed', 'slug', 'version', 'tag', 'name', 'exe', 'appimage', 'apk', 'wingetId', 'chocoId', 'exeHold', 'sourceforge'];
   if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, keys.map(k => `${k}=${result[k] ?? ''}`).join('\n') + '\n');
   console.log(result.listed ? `${result.name} ${result.version}: ${Object.keys(result.files).length} files in ${outDir}` : `Skipped ${tag}: ${result.reason}`);
 }

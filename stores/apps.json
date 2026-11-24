@@ -73,7 +73,7 @@
       "wingetId": "Kencypher.CypherCV",
       "chocoId": "cypher-cv",
       "sourceforge": "",
-      "exe": { "type": "portable", "command": "cypher-cv" },
+      "exe": { "type": "portable", "command": "cypher-cv", "hold": "Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold." },
       "tags": ["cv", "resume", "ats", "job-search", "career", "docx", "pdf", "offline"],
       "short": "Scores your CV for applicant tracking systems out of 10, then improves and tailors it, offline.",
       "description": "Cypher CV reads your CV the way applicant tracking systems do and scores it out of 10, with every point explained. It fixes what it can from your own words, asks you for the numbers and facts only you know, tailors the CV to a job without inventing skills, and exports Word and PDF files that keep your formatting. Everything runs on your computer: no account, no API key, no upload."
@@ -83,7 +83,7 @@
       "wingetId": "Kencypher.CypherPrinters",
       "chocoId": "cypher-printers",
       "sourceforge": "",
-      "exe": { "type": "portable", "command": "cypher-printers" },
+      "exe": { "type": "portable", "command": "cypher-printers", "hold": "Its README says the Windows driver steps were only simulated or run under Wine and must be tested on Windows 10 and 11 before release. Do that, then delete this hold." },
       "tags": ["printer", "printer-driver", "drivers", "usb", "network-printer", "utility"],
       "short": "Finds your printers, checks each driver is right for the exact model, and installs a verified one.",
       "description": "Cypher Printers finds the printers connected over USB, Ethernet and Wi-Fi, works out the exact model, checks whether the installed driver is right for that model and your system, and installs a verified driver when one is missing. It never installs a driver just because the brand matches, and it goes online only to fetch a driver: through your package manager on Linux, or from Windows Update, the Microsoft Update Catalog and the manufacturer's own site on Windows."

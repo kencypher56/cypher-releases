@@ -4,7 +4,7 @@ Checked 2026-11-24. **Nothing is published or submitted yet.** No listing URL ex
 
 Cypher HR is left out entirely, as instructed.
 
-Counts: Published 0 · Submitted for review 0 · Awaiting credentials 45 · Manual action required 23 · Unsupported format 19 · Failed 0.
+Counts: Published 0 · Submitted for review 0 · Awaiting credentials 39 · Manual action required 29 · Unsupported format 19 · Failed 0.
 
 | App | Format | Marketplace | Version | Status | Listing URL | Why it is not published |
 |---|---|---|---|---|---|---|
@@ -70,17 +70,17 @@ Counts: Published 0 · Submitted for review 0 · Awaiting credentials 45 · Manu
 | Cypher Visualizer | AppImage | SourceForge | 1.1.0 | Awaiting credentials | — | Needs a SourceForge account and project, its name in stores/apps.json, and the SF_* secrets. |
 | Cypher Visualizer | AppImage | Flathub | 1.1.0 | Unsupported format | — | Flathub takes Flatpak builds, not AppImages: needs a Flatpak manifest, AppStream metadata, an app ID you can prove you own, and Flathub review. |
 | Cypher Visualizer | AppImage | Snap Store | 1.1.0 | Unsupported format | — | The Snap Store takes snaps, not AppImages: needs a snapcraft.yaml with confinement and interfaces, a registered name and a store review. |
-| Cypher CV | exe (portable) | WinGet | 1.0.0 | Manual action required | — | Manifests ready and schema-valid in stores/winget. The pull request must come from your GitHub account: run `bash stores/submit-winget.sh`, then sign the Microsoft CLA when the bot asks. |
-| Cypher CV | exe (portable) | Chocolatey | 1.0.0 | Awaiting credentials | — | Package ready in stores/chocolatey. Needs a community.chocolatey.org account and its API key as the CHOCO_API_KEY secret; a new package then waits for human moderation. |
-| Cypher CV | exe (portable) | Uptodown | 1.0.0 | Awaiting credentials | — | Needs an Uptodown Developers Console account; the EXE is uploaded by hand there. |
-| Cypher CV | exe (portable) | SourceForge | 1.0.0 | Awaiting credentials | — | Needs a SourceForge account and project, its name in stores/apps.json, and the SF_* secrets. |
+| Cypher CV | exe (portable) | WinGet | 1.0.0 | Manual action required | — | On hold: Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold. Manifests are prepared but not sent. |
+| Cypher CV | exe (portable) | Chocolatey | 1.0.0 | Manual action required | — | On hold: Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold. Manifests are prepared but not sent. |
+| Cypher CV | exe (portable) | Uptodown | 1.0.0 | Manual action required | — | On hold: Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold. Manifests are prepared but not sent. |
+| Cypher CV | exe (portable) | SourceForge | 1.0.0 | Manual action required | — | On hold: Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold. Manifests are prepared but not sent. |
 | Cypher CV | AppImage | SourceForge | 1.0.0 | Awaiting credentials | — | Needs a SourceForge account and project, its name in stores/apps.json, and the SF_* secrets. |
 | Cypher CV | AppImage | Flathub | 1.0.0 | Unsupported format | — | Flathub takes Flatpak builds, not AppImages: needs a Flatpak manifest, AppStream metadata, an app ID you can prove you own, and Flathub review. |
 | Cypher CV | AppImage | Snap Store | 1.0.0 | Unsupported format | — | The Snap Store takes snaps, not AppImages: needs a snapcraft.yaml with confinement and interfaces, a registered name and a store review. |
-| Cypher Printers | exe (portable) | WinGet | 1.0.0 | Manual action required | — | Manifests ready and schema-valid in stores/winget. The pull request must come from your GitHub account: run `bash stores/submit-winget.sh`, then sign the Microsoft CLA when the bot asks. |
-| Cypher Printers | exe (portable) | Chocolatey | 1.0.0 | Awaiting credentials | — | Package ready in stores/chocolatey. Needs a community.chocolatey.org account and its API key as the CHOCO_API_KEY secret; a new package then waits for human moderation. |
-| Cypher Printers | exe (portable) | Uptodown | 1.0.0 | Awaiting credentials | — | Needs an Uptodown Developers Console account; the EXE is uploaded by hand there. |
-| Cypher Printers | exe (portable) | SourceForge | 1.0.0 | Awaiting credentials | — | Needs a SourceForge account and project, its name in stores/apps.json, and the SF_* secrets. |
+| Cypher Printers | exe (portable) | WinGet | 1.0.0 | Manual action required | — | On hold: Its README says the Windows driver steps were only simulated or run under Wine and must be tested on Windows 10 and 11 before release. Do that, then delete this hold. Manifests are prepared but not sent. |
+| Cypher Printers | exe (portable) | Chocolatey | 1.0.0 | Manual action required | — | On hold: Its README says the Windows driver steps were only simulated or run under Wine and must be tested on Windows 10 and 11 before release. Do that, then delete this hold. Manifests are prepared but not sent. |
+| Cypher Printers | exe (portable) | Uptodown | 1.0.0 | Manual action required | — | On hold: Its README says the Windows driver steps were only simulated or run under Wine and must be tested on Windows 10 and 11 before release. Do that, then delete this hold. Manifests are prepared but not sent. |
+| Cypher Printers | exe (portable) | SourceForge | 1.0.0 | Manual action required | — | On hold: Its README says the Windows driver steps were only simulated or run under Wine and must be tested on Windows 10 and 11 before release. Do that, then delete this hold. Manifests are prepared but not sent. |
 | Cypher Printers | AppImage | SourceForge | 1.0.0 | Awaiting credentials | — | Needs a SourceForge account and project, its name in stores/apps.json, and the SF_* secrets. |
 | Cypher Printers | AppImage | Flathub | 1.0.0 | Unsupported format | — | Flathub takes Flatpak builds, not AppImages: needs a Flatpak manifest, AppStream metadata, an app ID you can prove you own, and Flathub review. |
 | Cypher Printers | AppImage | Snap Store | 1.0.0 | Unsupported format | — | The Snap Store takes snaps, not AppImages: needs a snapcraft.yaml with confinement and interfaces, a registered name and a store review. |
