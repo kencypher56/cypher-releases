@@ -69,7 +69,7 @@ export function wingetFiles(cfg, app, slug, version, exe, release) {
       `Installers:\n- Architecture: x64\n  InstallerUrl: ${exe.url}\n  InstallerSha256: ${exe.sha256.toUpperCase()}\n` + tail('installer'),
     [join(dir, `${id}.locale.en-US.yaml`)]: head('defaultLocale') +
       `PackageLocale: en-US\nPublisher: ${q(cfg.publisher)}\nPublisherUrl: ${cfg.publisherUrl}\nPublisherSupportUrl: ${cfg.supportUrl}\n` +
-      `Author: ${q(cfg.publisher)}\nPackageName: ${q(app.name)}\nPackageUrl: ${cfg.site}/projects/${slug}\n` +
+      `Author: ${q(cfg.author)}\nPackageName: ${q(app.name)}\nPackageUrl: ${cfg.site}/projects/${slug}\n` +
       `License: ${q(cfg.license)}\nLicenseUrl: ${cfg.licenseUrl}\nCopyright: ${q(cfg.copyright)}\n` +
       `ShortDescription: ${q(app.short)}\nDescription: ${q(app.description)}\n` +
       `Tags:\n${app.tags.slice(0, 16).map(t => `- ${t}`).join('\n')}\nReleaseNotesUrl: ${release.html_url}\n` + tail('defaultLocale')
@@ -87,7 +87,7 @@ export function chocolateyFiles(cfg, app, slug, version, exe, release) {
     <packageSourceUrl>https://github.com/${cfg.repo}/tree/master/stores</packageSourceUrl>
     <owners>${xml(cfg.publisher)}</owners>
     <title>${xml(app.name)}</title>
-    <authors>${xml(cfg.publisher)}</authors>
+    <authors>${xml(cfg.author)}</authors>
     <projectUrl>${xml(`${cfg.site}/projects/${slug}`)}</projectUrl>
     <iconUrl>${xml(`${cfg.site}/img/icons/${slug}-256.png`)}</iconUrl>
     <copyright>${xml(cfg.copyright)}</copyright>

@@ -4,17 +4,23 @@ Everything that can be prepared without your accounts is here. Accounts, terms, 
 
 Listing text, icons, screenshots and release notes for each app: `stores/listings/<app>.md`. Status of every app on every store: `stores/REPORT.md`.
 
-**On hold: Cypher CV and Cypher Printers for Windows.** Their READMEs say the Windows builds were tested only under Wine, and Printers' driver steps still need a real Windows 10/11 run. Their WinGet and Chocolatey files are prepared, but the workflow, `submit-winget.sh` and SourceForge all skip their EXEs. After testing on real Windows, delete the `hold` line for that app in `stores/apps.json`. Their Linux AppImages are not held.
+Every listing names you as Muhammad Waleed Amjad (Kencypher). To keep an app's Windows build out of the stores later, add `"hold": "<reason>"` to its `exe` entry in `stores/apps.json`.
 
 ## WinGet (Windows)
 
-1. Open the first pull request for every package. This forks microsoft/winget-pkgs if you have no fork yet:
+1. Open the first pull request for every package. The script is safe to run again: it resumes where it stopped and brings open pull requests up to date.
 
    ```bash
    bash stores/submit-winget.sh
    ```
 
-2. On your first pull request, the Microsoft CLA bot asks you to agree in a comment. Do that, then wait for validation and a moderator.
+2. Sign Microsoft's CLA once, by commenting this on any one of your pull requests:
+
+   ```text
+   @microsoft-github-policy-service agree
+   ```
+
+   Until then they wait with the `Needs-CLA` label. After that, validation runs and a moderator merges them.
 3. After the first versions are merged, later releases follow on their own. Create a *classic* token with `public_repo` and `workflow` scopes, then:
 
    ```bash
@@ -24,14 +30,14 @@ Listing text, icons, screenshots and release notes for each app: `stores/listing
 ## Chocolatey (Windows)
 
 1. Make an account at community.chocolatey.org and copy your API key from the account page.
-2. Store it, then send the eight packages through the workflow:
+2. Store it, then send all nine packages through the workflow:
 
    ```bash
    gh secret set CHOCO_API_KEY --repo kencypher56/cypher-releases
    ```
 
    ```bash
-   for t in cypher-music-v2.141 cypher-contacts-v1.18 cypher-expenses-v3.11 cypher-tools-v1.1.0 cypher-share-v3.1.0 cypher-visualizer-v1.1.0; do gh workflow run "Publish to stores" --repo kencypher56/cypher-releases -f tag=$t; done
+   for t in cypher-music-v2.141 cypher-contacts-v1.18 cypher-expenses-v3.11 cypher-bot-v1.123 cypher-tools-v1.1.0 cypher-share-v3.1.0 cypher-visualizer-v1.1.0 cypher-cv-v1.0.0 cypher-printers-v1.0.0; do gh workflow run "Publish to stores" --repo kencypher56/cypher-releases -f tag=$t; done
    ```
 
 3. New packages wait for human moderation before they are public.
@@ -43,7 +49,7 @@ Listing text, icons, screenshots and release notes for each app: `stores/listing
 3. Add an SSH public key under Account Settings › SSH Settings.
 4. Run `ssh-keyscan frs.sourceforge.net` and check its fingerprints against SourceForge's documentation.
 5. Store the secrets: `SF_USER` (your user name), `SF_SSH_KEY` (the private key), `SF_KNOWN_HOSTS` (the checked keyscan output) and, optionally, `SF_API_KEY` (Account › Release API key, which sets the default downloads).
-6. Run the workflow for each tag, as in the Chocolatey loop, adding `cypher-share-v3.1.1`, `cypher-trainer-v1.0.0`, `cypher-cv-v1.0.0` and `cypher-printers-v1.0.0` (the last two send only their AppImages while the hold is on).
+6. Run the workflow for each tag, as in the Chocolatey loop, adding `cypher-share-v3.1.1`, `cypher-bot-v1.131`, `cypher-trainer-v1.0.0` and `cypher-store-v1.4.1`.
 
 Files already on SourceForge are never replaced.
 

@@ -6,12 +6,12 @@ PackageLocale: en-US
 Publisher: "Kencypher"
 PublisherUrl: https://github.com/kencypher56
 PublisherSupportUrl: https://github.com/kencypher56/cypher-releases/issues
-Author: "Kencypher"
+Author: "Muhammad Waleed Amjad (Kencypher)"
 PackageName: "Cypher Music"
 PackageUrl: https://cypherstore.vercel.app/projects/cypher-music
 License: "Proprietary freeware"
 LicenseUrl: https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt
-Copyright: "Copyright (C) 2026 Kencypher"
+Copyright: "Copyright (C) 2026 Muhammad Waleed Amjad (Kencypher)"
 ShortDescription: "Offline music and video player with a link downloader and an on-device vocal and instrument separator."
 Description: "Cypher Music is a full offline media library — songs, albums, artists, playlists and videos, all scanned from the machine it runs on. On top of the player it carries two things most players do not: a downloader that pulls audio or video from hundreds of sites, and a vocal and instrument separator that pulls a finished track apart into its vocal and instrumental stems. Both of them run on your own computer or phone, with nothing uploaded anywhere."
 Tags:

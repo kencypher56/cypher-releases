@@ -8,12 +8,12 @@ Every sentence below comes from the Cypher Store website (site/projects.apps.js)
 | Short description | Scores your CV for applicant tracking systems out of 10, then improves and tailors it, offline. |
 | Website | https://cypherstore.vercel.app/projects/cypher-cv |
 | Licence | Proprietary freeware, free of charge — https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt |
-| Developer | Kencypher (https://github.com/kencypher56) |
+| Developer | Muhammad Waleed Amjad (Kencypher), https://github.com/kencypher56 |
 | Support | https://github.com/kencypher56/cypher-releases/issues |
 | Privacy policy | **None published yet.** Huawei AppGallery and Samsung Galaxy Store require a privacy policy URL. |
 | Suggested category | Business / Office |
 | Requirements | Windows 10/11 (64-bit); Linux (x64) |
-| Windows testing | **On hold for Windows stores.** Its README says the Windows build has been tested only under Wine, not yet on real Windows. Run it on Windows 10/11, then delete this hold. |
+| Windows testing | Its README says the Windows build has been tested only under Wine, not yet on real Windows. |
 | Price | Free; no ads (as the website says) |
 
 ## Versions and files
