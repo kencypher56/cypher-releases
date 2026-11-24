@@ -10,3 +10,6 @@ node_modules/
 .stage/
 .stage-emp/
 .nm/
+
+# Local output of stores/make-manifests.mjs.
+store-out/

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-printers</id>
+    <version>1.0.0</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher Printers</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-printers</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-printers-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-printers printer printer-driver drivers usb network-printer utility</tags>
+    <summary>Finds your printers, checks each driver is right for the exact model, and installs a verified one.</summary>
+    <description>Cypher Printers finds the printers connected over USB, Ethernet and Wi-Fi, works out the exact model, checks whether the installed driver is right for that model and your system, and installs a verified driver when one is missing. It never installs a driver just because the brand matches, and it goes online only to fetch a driver: through your package manager on Linux, or from Windows Update, the Microsoft Update Catalog and the manufacturer's own site on Windows.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-printers-v1.0.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

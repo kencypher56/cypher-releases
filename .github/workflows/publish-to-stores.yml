@@ -1,0 +1,178 @@
+name: Publish to stores
+
+# A stable release goes to the stores that take the files it has:
+#   .exe      -> WinGet (pull request) and Chocolatey (push)
+#   all files -> SourceForge (upload), once the app has a SourceForge project
+#   .apk      -> listed in the run summary for the Android stores, which take
+#                uploads by hand in their own consoles
+# stores/apps.json decides which apps go anywhere at all. An app missing from
+# it (Cypher HR, for one) is skipped, and so are drafts and pre-releases.
+#
+# Each store waits for its own secret, and is skipped with a note until it
+# exists (Settings > Secrets and variables > Actions):
+#   WINGET_TOKEN    classic PAT, scopes public_repo + workflow, on the account
+#                   that owns your fork of microsoft/winget-pkgs
+#   CHOCO_API_KEY   community.chocolatey.org > Account > API Keys
+#   SF_USER         SourceForge user name
+#   SF_SSH_KEY      private key whose public half is on that SourceForge account
+#   SF_KNOWN_HOSTS  output of `ssh-keyscan frs.sourceforge.net`, checked by
+#                   hand against SourceForge's published fingerprints
+#   SF_API_KEY      SourceForge Release API key (optional: sets the default
+#                   download for Windows and Linux)
+#
+# Run it again for one release:
+#   gh workflow run "Publish to stores" --repo kencypher56/cypher-releases -f tag=cypher-music-v2.141
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag, for example cypher-music-v2.141
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stores-${{ github.event.release.tag_name || inputs.tag }}
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      listed: ${{ steps.make.outputs.listed }}
+      tag: ${{ steps.make.outputs.tag }}
+      version: ${{ steps.make.outputs.version }}
+      exe: ${{ steps.make.outputs.exe }}
+      wingetId: ${{ steps.make.outputs.wingetId }}
+      chocoId: ${{ steps.make.outputs.chocoId }}
+      sourceforge: ${{ steps.make.outputs.sourceforge }}
+    steps:
+      # stores/ lives on the default branch, whatever commit the tag points at.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - id: make
+        env:
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node stores/make-manifests.mjs "$TAG" --out store-out
+      - if: steps.make.outputs.listed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: store-files
+          path: store-out
+      - if: steps.make.outputs.listed == 'true'
+        run: cat store-out/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+  winget:
+    needs: prepare
+    if: needs.prepare.outputs.listed == 'true' && needs.prepare.outputs.wingetId != ''
+    runs-on: ubuntu-latest
+    steps:
+      - id: check
+        env:
+          TOKEN: ${{ secrets.WINGET_TOKEN }}
+          ID: ${{ needs.prepare.outputs.wingetId }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::notice::WinGet skipped: add the WINGET_TOKEN secret."; exit 0
+          fi
+          first=$(printf %s "${ID:0:1}" | tr '[:upper:]' '[:lower:]')
+          if ! gh api "repos/microsoft/winget-pkgs/contents/manifests/$first/${ID//.//}" --silent 2>/dev/null; then
+            echo "::notice::$ID is not in winget-pkgs yet. Its first version goes in by hand (stores/SUBMIT.md); later versions follow automatically."
+            exit 0
+          fi
+          echo "go=true" >> "$GITHUB_OUTPUT"
+      - if: steps.check.outputs.go == 'true'
+        uses: vedantmgoyal9/winget-releaser@b7370d4d152efdce803a26cc6ca9eee58cb2ad54 # main, 2026-10-07
+        with:
+          identifier: ${{ needs.prepare.outputs.wingetId }}
+          version: ${{ needs.prepare.outputs.version }}
+          release-tag: ${{ needs.prepare.outputs.tag }}
+          installers-regex: '\.exe$'
+          token: ${{ secrets.WINGET_TOKEN }}
+
+  chocolatey:
+    needs: prepare
+    if: needs.prepare.outputs.listed == 'true' && needs.prepare.outputs.chocoId != ''
+    runs-on: windows-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: store-files
+          path: store-out
+      - shell: pwsh
+        env:
+          KEY: ${{ secrets.CHOCO_API_KEY }}
+          ID: ${{ needs.prepare.outputs.chocoId }}
+        run: |
+          choco pack "store-out/chocolatey/$env:ID/$env:ID.nuspec" --outputdirectory nupkg
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not $env:KEY) {
+            Write-Output "::notice::Chocolatey skipped: add the CHOCO_API_KEY secret. The package is in the chocolatey-package artifact."
+            exit 0
+          }
+          choco push (Get-ChildItem nupkg/*.nupkg).FullName --source https://push.chocolatey.org/ --api-key $env:KEY
+          exit $LASTEXITCODE
+      - uses: actions/upload-artifact@v7
+        with:
+          name: chocolatey-package
+          path: nupkg
+
+  sourceforge:
+    needs: prepare
+    if: needs.prepare.outputs.listed == 'true' && needs.prepare.outputs.sourceforge != ''
+    runs-on: ubuntu-latest
+    env:
+      PROJECT: ${{ needs.prepare.outputs.sourceforge }}
+      VERSION: ${{ needs.prepare.outputs.version }}
+      TAG: ${{ needs.prepare.outputs.tag }}
+    steps:
+      - id: check
+        env:
+          SF_USER: ${{ secrets.SF_USER }}
+          SF_SSH_KEY: ${{ secrets.SF_SSH_KEY }}
+          SF_KNOWN_HOSTS: ${{ secrets.SF_KNOWN_HOSTS }}
+        run: |
+          if [ -z "$SF_USER" ] || [ -z "$SF_SSH_KEY" ] || [ -z "$SF_KNOWN_HOSTS" ]; then
+            echo "::notice::SourceForge skipped: add SF_USER, SF_SSH_KEY and SF_KNOWN_HOSTS."; exit 0
+          fi
+          echo "go=true" >> "$GITHUB_OUTPUT"
+      - if: steps.check.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir files \
+            --pattern '*.exe' --pattern '*.AppImage' --pattern '*.apk' --pattern '*.sha256'
+          (cd files && for f in *.sha256; do sha256sum -c "$f"; done)
+      - if: steps.check.outputs.go == 'true'
+        env:
+          SF_USER: ${{ secrets.SF_USER }}
+          SF_SSH_KEY: ${{ secrets.SF_SSH_KEY }}
+          SF_KNOWN_HOSTS: ${{ secrets.SF_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SF_SSH_KEY" > ~/.ssh/sourceforge && chmod 600 ~/.ssh/sourceforge
+          printf '%s\n' "$SF_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # --ignore-existing: a file already on SourceForge is never replaced.
+          rsync -av --mkpath --ignore-existing \
+            -e "ssh -i $HOME/.ssh/sourceforge -o StrictHostKeyChecking=yes" \
+            files/ "$SF_USER@frs.sourceforge.net:/home/frs/project/$PROJECT/$VERSION/"
+      - if: steps.check.outputs.go == 'true'
+        env:
+          SF_API_KEY: ${{ secrets.SF_API_KEY }}
+        run: |
+          if [ -z "$SF_API_KEY" ]; then
+            echo "::notice::Default downloads not set: add SF_API_KEY to set them."; exit 0
+          fi
+          for f in files/*.exe files/*.AppImage; do
+            [ -e "$f" ] || continue
+            case "$f" in *.exe) os=windows ;; *) os=linux ;; esac
+            curl --fail --silent --show-error --max-time 60 -H "Accept: application/json" -X PUT \
+              -d "default=$os" -d "api_key=$SF_API_KEY" \
+              "https://sourceforge.net/projects/$PROJECT/files/$VERSION/$(basename "$f")" > /dev/null
+            echo "Default $os download: $(basename "$f")"
+          done

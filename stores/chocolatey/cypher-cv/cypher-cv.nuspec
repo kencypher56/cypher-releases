@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-cv</id>
+    <version>1.0.0</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher CV</title>
+    <authors>Kencypher</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-cv</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-cv-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-cv cv resume ats job-search career docx pdf offline</tags>
+    <summary>Scores your CV for applicant tracking systems out of 10, then improves and tailors it, offline.</summary>
+    <description>Cypher CV reads your CV the way applicant tracking systems do and scores it out of 10, with every point explained. It fixes what it can from your own words, asks you for the numbers and facts only you know, tailors the CV to a job without inventing skills, and exports Word and PDF files that keep your formatting. Everything runs on your computer: no account, no API key, no upload.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-cv-v1.0.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
