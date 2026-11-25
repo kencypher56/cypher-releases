@@ -99,7 +99,7 @@ Your records stay where they are: updating keeps every entry.
 sole author and copyright holder. Run it, share an unmodified copy, keep it
 forever. Do not sell it, rebrand it, re-upload it, or publish it as your own.
 
-The only true source for this software is **[Cypher Store](https://cypherstore.vercel.app/projects/cypher-expenses)**.
+The official sources for this software are **[Cypher Store](https://cypherstore.vercel.app/projects/cypher-expenses)** and the store listings it links to.
 A copy from anywhere else is not one I published, and nothing about what is
 inside it is guaranteed.
 

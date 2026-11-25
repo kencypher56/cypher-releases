@@ -14,7 +14,7 @@ Every sentence below comes from the Cypher Store website (site/projects.apps.js)
 | Suggested category | Video / Multimedia |
 | Requirements | Windows 10/11; Linux (x64); Android 5.1+ |
 | Price | Free; no ads (as the website says) |
-| Store review risk | The voice pack names real people and characters (cypher-bot-voices-v1). Reviewers may ask about rights to those voices. |
+| Voice rights | The voice pack (cypher-bot-voices-v1) names real people and characters. You hold the rights to these voices (confirmed 2026-11-25); keep the proof ready, because a reviewer may ask for it. |
 
 ## Versions and files
 
@@ -95,7 +95,7 @@ the installation folder, so an update never touches them.
 sole author and copyright holder. Run it, share an unmodified copy, keep it
 forever. Do not sell it, rebrand it, re-upload it, or publish it as your own.
 
-The only true source for this software is **[Cypher Store](https://cypherstore.vercel.app/projects/cypher-bot)**.
+The official sources for this software are **[Cypher Store](https://cypherstore.vercel.app/projects/cypher-bot)** and the store listings it links to.
 A copy from anywhere else is not one I published, and nothing about what is
 inside it is guaranteed.
 
@@ -134,7 +134,7 @@ the AppImage, so an update never touches them.
 sole author and copyright holder. Run it, share an unmodified copy, keep it
 forever. Do not sell it, rebrand it, re-upload it, or publish it as your own.
 
-The only true source for this software is **[Cypher Store](https://cypherstore.vercel.app/projects/cypher-bot)**.
+The official sources for this software are **[Cypher Store](https://cypherstore.vercel.app/projects/cypher-bot)** and the store listings it links to.
 A copy from anywhere else is not one I published, and nothing about what is
 inside it is guaranteed.
 

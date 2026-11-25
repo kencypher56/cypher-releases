@@ -36,6 +36,16 @@ fi
 retry gh repo sync "$me/winget-pkgs" --branch master || exit 1
 base=$(gh api "repos/$me/winget-pkgs/git/ref/heads/master" --jq .object.sha) || exit 1
 
+# Open pull requests from this exact branch. The REST filter is exact and
+# immediate; gh pr list goes through search, which lags new pull requests.
+open_prs() { gh api "repos/microsoft/winget-pkgs/pulls?state=open&head=$me:$1" --jq length; }
+# Another run may open it between tries, so look again before each attempt.
+create_pr() {
+  local branch=$1; shift
+  [ "$(open_prs "$branch")" = 0 ] || return 0
+  gh pr create --repo microsoft/winget-pkgs --base master --head "$me:$branch" "$@"
+}
+
 submit() {
   local dir=$1 ver pkg id path branch f name sha old
   ver=$(basename "$dir"); pkg=$(basename "$(dirname "$dir")"); id="Kencypher.$pkg"
@@ -60,11 +70,10 @@ submit() {
         -f message="New package: $id version $ver" -f content="$(base64 -w0 "$f")" || return 1
     fi
   done
-  if [ "$(gh pr list --repo microsoft/winget-pkgs --author "$me" --head "$branch" --state open --json number --jq length)" != 0 ]; then
+  if [ "$(open_prs "$branch")" != 0 ]; then
     echo "$id $ver: pull request already open, files brought up to date"; return 0
   fi
-  retry gh pr create --repo microsoft/winget-pkgs --base master --head "$me:$branch" \
-    --title "New package: $id version $ver" \
+  retry create_pr "$branch" --title "New package: $id version $ver" \
     --body "New package $id $ver, published by its author, Muhammad Waleed Amjad (Kencypher), at https://github.com/kencypher56/cypher-releases.
 
 - The three manifests pass the 1.12.0 JSON schemas.

@@ -60,5 +60,5 @@ The Cypher Store app for Android: installs every Cypher Android app and keeps it
 sole author and copyright holder. Run it, share an unmodified copy, keep it
 forever. Do not sell it, rebrand it, re-upload it, or publish it as your own.
 
-The only true source for this software is **[Cypher Store](https://cypherstore.vercel.app)**.
+The official sources for this software are **[Cypher Store](https://cypherstore.vercel.app)** and the store listings it links to.
 Every file here has a `.sha256` beside it.

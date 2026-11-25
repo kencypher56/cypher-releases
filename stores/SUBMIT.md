@@ -8,7 +8,7 @@ Every listing names you as Muhammad Waleed Amjad (Kencypher). To keep an app's W
 
 ## WinGet (Windows)
 
-1. Open the first pull request for every package. The script is safe to run again: it resumes where it stopped and brings open pull requests up to date.
+1. Done on 2026-11-25: all nine pull requests are open (links in `stores/REPORT.md`). For a new app, run the script again. It is safe to repeat: it resumes where it stopped and brings open pull requests up to date.
 
    ```bash
    bash stores/submit-winget.sh
