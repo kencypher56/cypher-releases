@@ -8,7 +8,7 @@ Every sentence below comes from the Cypher Store website (site/projects.apps.js)
 | Short description | Sends files and whole folders between your computers and your phone, at the full speed of your own network. |
 | Website | https://cypherstore.vercel.app/projects/cypher-share |
 | Licence | Proprietary freeware, free of charge — https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt |
-| Developer | Kencypher (https://github.com/kencypher56) |
+| Developer | Muhammad Waleed Amjad (Kencypher), https://github.com/kencypher56 |
 | Support | https://github.com/kencypher56/cypher-releases/issues |
 | Privacy policy | **None published yet.** Huawei AppGallery and Samsung Galaxy Store require a privacy policy URL. |
 | Suggested category | Tools / File transfer |

@@ -18,7 +18,7 @@ test('parseTag splits slug and version', () => {
 
 test('apps nobody listed, drafts and pre-releases produce nothing', async () => {
   for (const r of [release('cypher-hr-v1.920.1004', ['CypherHR-Setup-1.920.1004.zip']),
-                   release('cypher-bot-v1.131', ['CypherBot-1.131-x86_64.AppImage']),
+                   release('cypher-zkteko-v2.0.6', ['CypherZKTeko-Setup-2.0.6.zip']),
                    release('cypher-music-v2.142', ['CypherMusic-Setup-2.142.exe'], { prerelease: true })]) {
     const out = await build(cfg, r);
     assert.equal(out.listed, false, r.tag_name);
@@ -37,6 +37,20 @@ test('an Inno installer gets WinGet manifests and a Chocolatey package with unin
   assert.ok(out.files['chocolatey/cypher-music/tools/chocolateyuninstall.ps1']);
   assert.match(out.files['chocolatey/cypher-music/tools/chocolateyinstall.ps1'], /\/VERYSILENT \/SUPPRESSMSGBOXES \/NORESTART \/SP-/);
   assert.match(out.files['chocolatey/cypher-music/cypher-music.nuspec'], /<version>2\.141<\/version>/);
+  assert.match(out.files['chocolatey/cypher-music/cypher-music.nuspec'], /<authors>Muhammad Waleed Amjad \(Kencypher\)<\/authors>/);
+  assert.match(out.files['winget/manifests/k/Kencypher/CypherMusic/2.141/Kencypher.CypherMusic.locale.en-US.yaml'], /Author: "Muhammad Waleed Amjad \(Kencypher\)"\nPackageName/);
+});
+
+test('an exe on hold is prepared but sent to no Windows store', async () => {
+  const held = structuredClone(cfg);
+  held.apps['cypher-cv'].exe.hold = 'not yet tested on Windows';
+  const out = await build(held, release('cypher-cv-v1.0.0', ['CypherCV-1.0.0.exe', 'CypherCV-1.0.0-x86_64.AppImage']));
+  assert.equal(out.exe, true);
+  assert.equal(out.wingetId, '');
+  assert.equal(out.chocoId, '');
+  assert.equal(out.exeHold, true);
+  assert.match(out.files['summary.md'], /Windows stores on hold/);
+  assert.ok(out.files['winget/manifests/k/Kencypher/CypherCV/1.0.0/Kencypher.CypherCV.installer.yaml']);
 });
 
 test('a portable exe gets a portable manifest and a shim, no uninstaller', async () => {

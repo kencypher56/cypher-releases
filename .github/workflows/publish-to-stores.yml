@@ -47,6 +47,7 @@ jobs:
       exe: ${{ steps.make.outputs.exe }}
       wingetId: ${{ steps.make.outputs.wingetId }}
       chocoId: ${{ steps.make.outputs.chocoId }}
+      exeHold: ${{ steps.make.outputs.exeHold }}
       sourceforge: ${{ steps.make.outputs.sourceforge }}
     steps:
       # stores/ lives on the default branch, whatever commit the tag points at.
@@ -144,9 +145,12 @@ jobs:
       - if: steps.check.outputs.go == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          EXE_HOLD: ${{ needs.prepare.outputs.exeHold }}
         run: |
           gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir files \
             --pattern '*.exe' --pattern '*.AppImage' --pattern '*.apk' --pattern '*.sha256'
+          # An exe on hold in stores/apps.json stays off SourceForge too.
+          if [ "$EXE_HOLD" = true ]; then rm -f files/*.exe files/*.exe.sha256; fi
           (cd files && for f in *.sha256; do sha256sum -c "$f"; done)
       - if: steps.check.outputs.go == 'true'
         env:

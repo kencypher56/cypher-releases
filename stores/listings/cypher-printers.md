@@ -8,11 +8,12 @@ Every sentence below comes from the Cypher Store website (site/projects.apps.js)
 | Short description | Finds your printers, checks each driver is right for the exact model, and installs a verified one. |
 | Website | https://cypherstore.vercel.app/projects/cypher-printers |
 | Licence | Proprietary freeware, free of charge — https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt |
-| Developer | Kencypher (https://github.com/kencypher56) |
+| Developer | Muhammad Waleed Amjad (Kencypher), https://github.com/kencypher56 |
 | Support | https://github.com/kencypher56/cypher-releases/issues |
 | Privacy policy | **None published yet.** Huawei AppGallery and Samsung Galaxy Store require a privacy policy URL. |
 | Suggested category | Utilities / System |
 | Requirements | Windows 10/11 (64-bit); Linux (x64) |
+| Windows testing | Its README says the Windows driver steps were only simulated or run under Wine and must be tested on Windows 10 and 11 before release. |
 | Price | Free; no ads (as the website says) |
 
 ## Versions and files

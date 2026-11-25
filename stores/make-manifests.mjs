@@ -69,7 +69,7 @@ export function wingetFiles(cfg, app, slug, version, exe, release) {
       `Installers:\n- Architecture: x64\n  InstallerUrl: ${exe.url}\n  InstallerSha256: ${exe.sha256.toUpperCase()}\n` + tail('installer'),
     [join(dir, `${id}.locale.en-US.yaml`)]: head('defaultLocale') +
       `PackageLocale: en-US\nPublisher: ${q(cfg.publisher)}\nPublisherUrl: ${cfg.publisherUrl}\nPublisherSupportUrl: ${cfg.supportUrl}\n` +
-      `Author: ${q(cfg.publisher)}\nPackageName: ${q(app.name)}\nPackageUrl: ${cfg.site}/projects/${slug}\n` +
+      `Author: ${q(cfg.author)}\nPackageName: ${q(app.name)}\nPackageUrl: ${cfg.site}/projects/${slug}\n` +
       `License: ${q(cfg.license)}\nLicenseUrl: ${cfg.licenseUrl}\nCopyright: ${q(cfg.copyright)}\n` +
       `ShortDescription: ${q(app.short)}\nDescription: ${q(app.description)}\n` +
       `Tags:\n${app.tags.slice(0, 16).map(t => `- ${t}`).join('\n')}\nReleaseNotesUrl: ${release.html_url}\n` + tail('defaultLocale')
@@ -87,7 +87,7 @@ export function chocolateyFiles(cfg, app, slug, version, exe, release) {
     <packageSourceUrl>https://github.com/${cfg.repo}/tree/master/stores</packageSourceUrl>
     <owners>${xml(cfg.publisher)}</owners>
     <title>${xml(app.name)}</title>
-    <authors>${xml(cfg.publisher)}</authors>
+    <authors>${xml(cfg.author)}</authors>
     <projectUrl>${xml(`${cfg.site}/projects/${slug}`)}</projectUrl>
     <iconUrl>${xml(`${cfg.site}/img/icons/${slug}-256.png`)}</iconUrl>
     <copyright>${xml(cfg.copyright)}</copyright>
@@ -158,6 +158,7 @@ const STORES = {
 
 function summary(app, version, release, files) {
   const lines = [`## ${app.name} ${version}`, '', `Release: ${release.html_url}`, ''];
+  if (files.exe && app.exe?.hold) lines.push(`**Windows stores on hold:** ${app.exe.hold}`, '');
   for (const kind of Object.keys(STORES)) {
     const f = files[kind];
     if (!f) continue;
@@ -182,10 +183,12 @@ export async function build(cfg, release, fetchText) {
     Object.assign(out, wingetFiles(cfg, app, slug, version, found.exe, release));
     Object.assign(out, chocolateyFiles(cfg, app, slug, version, found.exe, release));
   }
+  // A held exe still gets its files, for review, but no store job runs for it.
+  const send = found.exe && !app.exe?.hold;
   const result = {
     listed: true, slug, version, tag: release.tag_name, name: app.name,
     exe: !!found.exe, appimage: !!found.appimage, apk: !!found.apk,
-    wingetId: (found.exe && app.wingetId) || '', chocoId: (found.exe && app.chocoId) || '',
+    wingetId: (send && app.wingetId) || '', chocoId: (send && app.chocoId) || '', exeHold: !!(found.exe && !send),
     sourceforge: app.sourceforge || '', files: found
   };
   out['formats.json'] = JSON.stringify(result, null, 2) + '\n';
@@ -220,7 +223,7 @@ async function main(argv) {
     mkdirSync(dirname(join(outDir, rel)), { recursive: true });
     writeFileSync(join(outDir, rel), text);
   }
-  const keys = ['listed', 'slug', 'version', 'tag', 'name', 'exe', 'appimage', 'apk', 'wingetId', 'chocoId', 'sourceforge'];
+  const keys = ['listed', 'slug', 'version', 'tag', 'name', 'exe', 'appimage', 'apk', 'wingetId', 'chocoId', 'exeHold', 'sourceforge'];
   if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, keys.map(k => `${k}=${result[k] ?? ''}`).join('\n') + '\n');
   console.log(result.listed ? `${result.name} ${result.version}: ${Object.keys(result.files).length} files in ${outDir}` : `Skipped ${tag}: ${result.reason}`);
 }

@@ -1,10 +1,11 @@
 {
   "publisher": "Kencypher",
+  "author": "Muhammad Waleed Amjad (Kencypher)",
   "publisherUrl": "https://github.com/kencypher56",
   "supportUrl": "https://github.com/kencypher56/cypher-releases/issues",
   "site": "https://cypherstore.vercel.app",
   "repo": "kencypher56/cypher-releases",
-  "copyright": "Copyright (C) 2026 Kencypher",
+  "copyright": "Copyright (C) 2026 Muhammad Waleed Amjad (Kencypher)",
   "license": "Proprietary freeware",
   "licenseUrl": "https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt",
   "apps": {
@@ -13,8 +14,20 @@
       "wingetId": "Kencypher.CypherMusic",
       "chocoId": "cypher-music",
       "sourceforge": "",
-      "exe": { "type": "inno", "arpName": "Cypher Music" },
-      "tags": ["music-player", "video-player", "audio", "downloader", "vocal-remover", "stem-separation", "karaoke", "offline"],
+      "exe": {
+        "type": "inno",
+        "arpName": "Cypher Music"
+      },
+      "tags": [
+        "music-player",
+        "video-player",
+        "audio",
+        "downloader",
+        "vocal-remover",
+        "stem-separation",
+        "karaoke",
+        "offline"
+      ],
       "short": "Offline music and video player with a link downloader and an on-device vocal and instrument separator.",
       "description": "Cypher Music is a full offline media library — songs, albums, artists, playlists and videos, all scanned from the machine it runs on. On top of the player it carries two things most players do not: a downloader that pulls audio or video from hundreds of sites, and a vocal and instrument separator that pulls a finished track apart into its vocal and instrumental stems. Both of them run on your own computer or phone, with nothing uploaded anywhere."
     },
@@ -23,8 +36,20 @@
       "wingetId": "Kencypher.CypherContacts",
       "chocoId": "cypher-contacts",
       "sourceforge": "",
-      "exe": { "type": "inno", "arpName": "Cypher Contacts" },
-      "tags": ["contacts", "address-book", "vcard", "csv", "export", "import", "backup", "offline"],
+      "exe": {
+        "type": "inno",
+        "arpName": "Cypher Contacts"
+      },
+      "tags": [
+        "contacts",
+        "address-book",
+        "vcard",
+        "csv",
+        "export",
+        "import",
+        "backup",
+        "offline"
+      ],
       "short": "Exports your address book eleven ways and imports it back, on your own device.",
       "description": "Most phones will happily show you your contacts and then fight you when you try to take them somewhere else. Cypher Contacts is built around the opposite idea: browse and edit normally, then export the whole address book into whatever format the next tool actually reads — and import it back the same way."
     },
@@ -33,18 +58,62 @@
       "wingetId": "Kencypher.CypherExpenses",
       "chocoId": "cypher-expenses",
       "sourceforge": "",
-      "exe": { "type": "inno", "arpName": "Cypher Expenses" },
-      "tags": ["expenses", "budget", "finance", "money", "ledger", "pdf-reports", "offline"],
+      "exe": {
+        "type": "inno",
+        "arpName": "Cypher Expenses"
+      },
+      "tags": [
+        "expenses",
+        "budget",
+        "finance",
+        "money",
+        "ledger",
+        "pdf-reports",
+        "offline"
+      ],
       "short": "Records expenses and money in, and turns them into statements and PDF reports.",
       "description": "Money in, money out, and an honest answer to where it went. Cypher Expenses keeps a running balance, breaks spending down by category, and exports a detailed or summary statement as a PDF for any date range. Everything is stored on the device and it never asks you to make an account."
+    },
+    "cypher-bot": {
+      "name": "Cypher BOT",
+      "wingetId": "Kencypher.CypherBOT",
+      "chocoId": "cypher-bot",
+      "sourceforge": "",
+      "exe": {
+        "type": "inno",
+        "arpName": "Cypher BOT"
+      },
+      "tags": [
+        "reddit",
+        "text-to-speech",
+        "tts",
+        "video-maker",
+        "narration",
+        "voices",
+        "offline"
+      ],
+      "short": "Turns a Reddit thread into a narrated video, read in the character voices you pick.",
+      "description": "Paste a Reddit thread, pick a voice, and Cypher BOT reads the post and its comments aloud over a background and renders the whole thing as a finished video file. The speech engine and every character voice run on the device — no server, no API key, and the thread you are reading is not uploaded anywhere."
     },
     "cypher-tools": {
       "name": "Cypher Tools",
       "wingetId": "Kencypher.CypherTools",
       "chocoId": "cypher-tools",
       "sourceforge": "",
-      "exe": { "type": "inno", "arpName": "Cypher Tools" },
-      "tags": ["pdf", "converter", "image-converter", "video-converter", "audio-converter", "office", "archive", "offline"],
+      "exe": {
+        "type": "inno",
+        "arpName": "Cypher Tools"
+      },
+      "tags": [
+        "pdf",
+        "converter",
+        "image-converter",
+        "video-converter",
+        "audio-converter",
+        "office",
+        "archive",
+        "offline"
+      ],
       "short": "Sixty-eight offline tools for PDFs, Office files, images, audio, video and archives. Drop a file, pick a tool, done.",
       "description": "Cypher Tools is one toolbox for the file jobs that usually send you to a website: MP4 to MP3, Word to PDF, PDF to Excel, signing a PDF, shrinking photos, ZIP to RAR. Drop a file and it shows the tools that fit. All 68 tools run on your own device, with no account and no upload, and the result lands next to the original without touching it. On a PC it drives real engines: a bundled ffmpeg, Microsoft Office or LibreOffice, and WinRAR."
     },
@@ -53,8 +122,19 @@
       "wingetId": "Kencypher.CypherShare",
       "chocoId": "cypher-share",
       "sourceforge": "",
-      "exe": { "type": "inno", "arpName": "CYPHER-SHARE" },
-      "tags": ["file-transfer", "file-sharing", "lan", "wifi", "android", "folders", "offline"],
+      "exe": {
+        "type": "inno",
+        "arpName": "CYPHER-SHARE"
+      },
+      "tags": [
+        "file-transfer",
+        "file-sharing",
+        "lan",
+        "wifi",
+        "android",
+        "folders",
+        "offline"
+      ],
       "short": "Sends files and whole folders between your computers and your phone, at the full speed of your own network.",
       "description": "Cypher Share moves files and entire folder trees between Windows and Linux computers and Android phones on the same local network. Start it on two devices and they find each other by themselves: there is no account, no pairing code and no server in the middle. Pick what to send, tap the device, and the receiver decides what comes in. The data travels device to device over parallel connections and never leaves your network."
     },
@@ -63,8 +143,18 @@
       "wingetId": "Kencypher.CypherVisualizer",
       "chocoId": "cypher-visualizer",
       "sourceforge": "",
-      "exe": { "type": "inno", "arpName": "Cypher Visualizer" },
-      "tags": ["audio-visualizer", "visualizer", "music", "overlay", "desktop", "spectrum"],
+      "exe": {
+        "type": "inno",
+        "arpName": "Cypher Visualizer"
+      },
+      "tags": [
+        "audio-visualizer",
+        "visualizer",
+        "music",
+        "overlay",
+        "desktop",
+        "spectrum"
+      ],
       "short": "A real-time visualizer for whatever your computer is playing, drawn in a small desktop overlay.",
       "description": "Cypher Visualizer turns whatever your computer is already playing, from YouTube and Spotify to VLC and games, into a live visualization in a corner of your desktop. There is no window around it, no background and nothing to click: the mouse goes straight through to whatever sits underneath. Thirty visualizers, from GLava-style bars to 3D tunnels, follow the bass, mids and treble as they happen."
     },
@@ -73,8 +163,20 @@
       "wingetId": "Kencypher.CypherCV",
       "chocoId": "cypher-cv",
       "sourceforge": "",
-      "exe": { "type": "portable", "command": "cypher-cv" },
-      "tags": ["cv", "resume", "ats", "job-search", "career", "docx", "pdf", "offline"],
+      "exe": {
+        "type": "portable",
+        "command": "cypher-cv"
+      },
+      "tags": [
+        "cv",
+        "resume",
+        "ats",
+        "job-search",
+        "career",
+        "docx",
+        "pdf",
+        "offline"
+      ],
       "short": "Scores your CV for applicant tracking systems out of 10, then improves and tailors it, offline.",
       "description": "Cypher CV reads your CV the way applicant tracking systems do and scores it out of 10, with every point explained. It fixes what it can from your own words, asks you for the numbers and facts only you know, tailors the CV to a job without inventing skills, and exports Word and PDF files that keep your formatting. Everything runs on your computer: no account, no API key, no upload."
     },
@@ -83,22 +185,41 @@
       "wingetId": "Kencypher.CypherPrinters",
       "chocoId": "cypher-printers",
       "sourceforge": "",
-      "exe": { "type": "portable", "command": "cypher-printers" },
-      "tags": ["printer", "printer-driver", "drivers", "usb", "network-printer", "utility"],
+      "exe": {
+        "type": "portable",
+        "command": "cypher-printers"
+      },
+      "tags": [
+        "printer",
+        "printer-driver",
+        "drivers",
+        "usb",
+        "network-printer",
+        "utility"
+      ],
       "short": "Finds your printers, checks each driver is right for the exact model, and installs a verified one.",
       "description": "Cypher Printers finds the printers connected over USB, Ethernet and Wi-Fi, works out the exact model, checks whether the installed driver is right for that model and your system, and installs a verified driver when one is missing. It never installs a driver just because the brand matches, and it goes online only to fetch a driver: through your package manager on Linux, or from Windows Update, the Microsoft Update Catalog and the manufacturer's own site on Windows."
     },
     "cypher-trainer": {
       "name": "Cypher Trainer",
       "sourceforge": "",
-      "tags": ["games", "steam", "proton", "linux", "trainer"],
+      "tags": [
+        "games",
+        "steam",
+        "proton",
+        "linux",
+        "trainer"
+      ],
       "short": "Runs your Windows game trainers with Steam and Proton games on Linux, and checks they connect.",
       "description": "Cypher Trainer runs your Windows game trainers, FLiNG first, alongside games you play through Steam and Proton on Linux. It finds your Steam games by itself, notices when you start one, works out which process is really the game, and starts the trainer inside that game's own Proton session. Then it checks that the trainer can actually see and read the game, and tells you plainly whether it can."
     },
     "cypher-store": {
       "name": "Cypher Store",
       "sourceforge": "",
-      "tags": ["app-store", "updater"],
+      "tags": [
+        "app-store",
+        "updater"
+      ],
       "short": "Installs every Cypher Android app and tells you when an update is out.",
       "description": "Installs every Cypher Android app and tells you when an update is out. Official builds from the GitHub release, with a SHA-256 for every file. No ads, not in the store and not in the apps. No account: download it and it is yours to keep."
     }

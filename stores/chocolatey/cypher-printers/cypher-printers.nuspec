@@ -6,10 +6,10 @@
     <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
     <owners>Kencypher</owners>
     <title>Cypher Printers</title>
-    <authors>Kencypher</authors>
+    <authors>Muhammad Waleed Amjad (Kencypher)</authors>
     <projectUrl>https://cypherstore.vercel.app/projects/cypher-printers</projectUrl>
     <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-printers-256.png</iconUrl>
-    <copyright>Copyright (C) 2026 Kencypher</copyright>
+    <copyright>Copyright (C) 2026 Muhammad Waleed Amjad (Kencypher)</copyright>
     <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>

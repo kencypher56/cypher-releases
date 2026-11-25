@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cypher-bot</id>
+    <version>1.123</version>
+    <packageSourceUrl>https://github.com/kencypher56/cypher-releases/tree/master/stores</packageSourceUrl>
+    <owners>Kencypher</owners>
+    <title>Cypher BOT</title>
+    <authors>Muhammad Waleed Amjad (Kencypher)</authors>
+    <projectUrl>https://cypherstore.vercel.app/projects/cypher-bot</projectUrl>
+    <iconUrl>https://cypherstore.vercel.app/img/icons/cypher-bot-256.png</iconUrl>
+    <copyright>Copyright (C) 2026 Muhammad Waleed Amjad (Kencypher)</copyright>
+    <licenseUrl>https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <bugTrackerUrl>https://github.com/kencypher56/cypher-releases/issues</bugTrackerUrl>
+    <tags>cypher-bot reddit text-to-speech tts video-maker narration voices offline</tags>
+    <summary>Turns a Reddit thread into a narrated video, read in the character voices you pick.</summary>
+    <description>Paste a Reddit thread, pick a voice, and Cypher BOT reads the post and its comments aloud over a background and renders the whole thing as a finished video file. The speech engine and every character voice run on the device — no server, no API key, and the thread you are reading is not uploaded anywhere.</description>
+    <releaseNotes>https://github.com/kencypher56/cypher-releases/releases/tag/cypher-bot-v1.123</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

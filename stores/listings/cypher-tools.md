@@ -8,7 +8,7 @@ Every sentence below comes from the Cypher Store website (site/projects.apps.js)
 | Short description | Sixty-eight offline tools for PDFs, Office files, images, audio, video and archives. Drop a file, pick a tool, done. |
 | Website | https://cypherstore.vercel.app/projects/cypher-tools |
 | Licence | Proprietary freeware, free of charge — https://github.com/kencypher56/cypher-releases/blob/master/LICENSE.txt |
-| Developer | Kencypher (https://github.com/kencypher56) |
+| Developer | Muhammad Waleed Amjad (Kencypher), https://github.com/kencypher56 |
 | Support | https://github.com/kencypher56/cypher-releases/issues |
 | Privacy policy | **None published yet.** Huawei AppGallery and Samsung Galaxy Store require a privacy policy URL. |
 | Suggested category | Tools / Productivity |
