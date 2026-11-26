@@ -42,41 +42,64 @@ Every listing names you as Muhammad Waleed Amjad (Kencypher). To keep an app's W
 
 3. New packages wait for human moderation before they are public.
 
-## SourceForge (Windows and Linux files)
+## SourceForge (Windows, Linux and Android files)
 
-1. Make an account, then one project per app.
-2. Put each project's short name in the `sourceforge` field of `stores/apps.json`.
-3. Add an SSH public key under Account Settings › SSH Settings.
-4. Run `ssh-keyscan frs.sourceforge.net` and check its fingerprints against SourceForge's documentation.
-5. Store the secrets: `SF_USER` (your user name), `SF_SSH_KEY` (the private key), `SF_KNOWN_HOSTS` (the checked keyscan output) and, optionally, `SF_API_KEY` (Account › Release API key, which sets the default downloads).
-6. Run the workflow for each tag, as in the Chocolatey loop, adding `cypher-share-v3.1.1`, `cypher-bot-v1.131`, `cypher-trainer-v1.0.0` and `cypher-store-v1.4.1`.
+`stores/apps.json` already names one project per app, after its slug (`cypher-music`, `cypher-contacts` and so on). All eleven names were free on 26 November 2026.
+
+1. Make an account, then create each project under exactly that name. Cypher HR gets none.
+2. Add an SSH public key under Account Settings › SSH Settings.
+3. Upload the releases that already exist, from this folder:
+
+   ```bash
+   SF_USER=yourname bash stores/submit-sourceforge.sh
+   ```
+
+4. For every release after that, store the secrets: `SF_USER` (your user name), `SF_SSH_KEY` (the private key), `SF_KNOWN_HOSTS` (the output of `ssh-keyscan frs.sourceforge.net`, checked against SourceForge's published fingerprints) and, optionally, `SF_API_KEY` (Account › Release API key, which sets the default downloads). The workflow then uploads each new release.
 
 Files already on SourceForge are never replaced.
+
+## AUR (Linux)
+
+Each app with an AppImage gets a `<slug>-appimage` package that installs the AppImage unchanged in `/opt`, with a command, a menu entry and an icon. All ten were test-built with makepkg.
+
+1. Make an AUR account at aur.archlinux.org and add your SSH public key under My Account.
+2. Publish all ten from this folder (it commits as your git identity and pushes):
+
+   ```bash
+   bash stores/submit-aur.sh
+   ```
+
+3. For later releases, store `AUR_SSH_KEY` and `AUR_KNOWN_HOSTS` (the output of `ssh-keyscan aur.archlinux.org`, checked against the fingerprints on aur.archlinux.org). The workflow then updates the package.
 
 ## Uptodown (Windows and Android)
 
 There is no upload API. Sign up in the Developers Console (en.uptodown.com/developers-console), then upload each app's `.exe` and `.apk` by hand, with the text from its listing file.
 
-## Huawei AppGallery and Samsung Galaxy Store (Android)
+## Huawei AppGallery (Android)
 
-1. Both require a **privacy policy URL**, and the website has none. It has to say what each app actually collects and sends, which only you can state. Publish it first.
-2. Then register: Huawei needs identity verification for a personal account. Samsung uses the Seller Portal.
-3. Upload the APK and fill in the content rating questionnaire. Expect questions about MANAGE_EXTERNAL_STORAGE (Music, Share) and the contacts permissions (Contacts).
-4. Leave out Cypher Store: it installs other apps, which these stores normally refuse.
-5. AppGallery icons are 216 × 216 and Galaxy Store icons 512 × 512. Scale the sources named in the listing files down, never up.
+Drafts exist for Cypher Contacts, Cypher Expenses, Cypher Tools and CYPHER-SHARE (Huawei wants the name inside the APK, and Share's is CYPHER-SHARE). Music (YouTube downloads), BOT (celebrity voices) and Store (installs other apps) are left out.
 
-## Aptoide (Android)
+Already filled in: descriptions, category, countries (all except the Chinese mainland, which needs a software copyright certificate), the privacy policy URL, privacy tags (no personal data collected), the AI declaration, reviewer notes and the age rating (Contacts and Tools 3+, Expenses 16+, which is Huawei's rating for finance apps). CYPHER-SHARE still needs its age rating and a check that its version page saved.
 
-Check Aptoide Connect's price before you sign up: a third-party guide says it is a paid subscription. Uploads are APKs up to 2 GB.
+Left for you, because the upload boxes sit in a frame the browser tools cannot reach:
+
+1. Sign back in to AppGallery Connect.
+2. On each app's App information page: the 216 × 216 icon and three to five phone screenshots from `~/Desktop/builds/<app>/icon` and `screenshots/phone`. Save.
+3. On each Draft version page: Manage packages › upload the APK from `~/Desktop/builds/<app>/Android`. Save Draft.
+4. Submit only once https://cypherstore.vercel.app/privacy loads. It is in the portfolio `feature/privacy` branch, not pushed yet.
+
+## Samsung Galaxy Store (Android)
+
+1. Sign up in the Seller Portal (seller.samsungapps.com) as a private seller.
+2. Same four apps as Huawei, same privacy URL. Icons are 512 × 512, in `~/Desktop/builds/<app>/icon`.
+3. Check the minimum screenshot count when you get there: Share has only three phone screenshots.
 
 ## Flathub and Snap Store (Linux)
 
-Neither takes an AppImage, so nothing was submitted to them. Each app would need:
+Nothing prepared, on purpose.
 
-- **Flathub:** a Flatpak manifest wrapping the Electron build, AppStream metainfo with screenshots, a desktop file, and an app ID you can prove you own (for example `io.github.kencypher56.CypherMusic`). Then a pull request to flathub/flathub and their review.
-- **Snap Store:** a `snapcraft.yaml` (Electron apps usually use the gnome extension) with strict confinement and the right plugs (home, removable-media, network, audio-playback). Then a registered snap name and a store review.
-
-Either way that is a packaging project per app, not a re-upload.
+- **Flathub** does not accept manifests written or assisted by AI, or submission pull requests opened by AI tools, and it asks you to disclose AI-generated code inside the app. A Flathub listing means writing the Flatpak manifest and the pull request yourself.
+- **Snap Store:** a `snapcraft.yaml` per app (Electron apps usually use the gnome extension) with strict confinement and the right plugs, a registered snap name and a store review.
 
 ## When a listing goes live
 
