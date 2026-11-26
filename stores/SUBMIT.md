@@ -79,14 +79,9 @@ There is no upload API. Sign up in the Developers Console (en.uptodown.com/devel
 
 Drafts exist for Cypher Contacts, Cypher Expenses, Cypher Tools and CYPHER-SHARE (Huawei wants the name inside the APK, and Share's is CYPHER-SHARE). Music (YouTube downloads), BOT (celebrity voices) and Store (installs other apps) are left out.
 
-Already filled in: descriptions, category, countries (all except the Chinese mainland, which needs a software copyright certificate), the privacy policy URL, privacy tags (no personal data collected), the AI declaration, reviewer notes and the age rating (Contacts and Tools 3+, Expenses 16+, which is Huawei's rating for finance apps). CYPHER-SHARE still needs its age rating and a check that its version page saved.
+All four drafts are complete: descriptions, category, compatible device (phone), icon, screenshots, APK (SHA-256 checked before upload), countries (all except the Chinese mainland, which needs a software copyright certificate), the privacy policy URL, privacy tags (no personal data collected), the AI declaration, reviewer notes and the age rating (Contacts, Tools and Share 3+, Expenses 16+, which is Huawei's rating for finance apps).
 
-Left for you, because the upload boxes sit in a frame the browser tools cannot reach:
-
-1. Sign back in to AppGallery Connect.
-2. On each app's App information page: the 216 × 216 icon and three to five phone screenshots from `~/Desktop/builds/<app>/icon` and `screenshots/phone`. Save.
-3. On each Draft version page: Manage packages › upload the APK from `~/Desktop/builds/<app>/Android`. Save Draft.
-4. Submit only once https://cypherstore.vercel.app/privacy loads. It is in the portfolio `feature/privacy` branch, not pushed yet.
+Left for you: press **Submit** on each app's Draft version page once https://cypherstore.vercel.app/privacy loads (it is in the portfolio `feature/privacy` branch, not pushed yet).
 
 ## Samsung Galaxy Store (Android)
 
