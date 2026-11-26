@@ -78,6 +78,20 @@ test('a missing digest falls back to the .sha256 file, and an unusable one fails
   await assert.rejects(pickFiles(r, async () => ''), /neither a GitHub digest/);
 });
 
+test('an AppImage release becomes an AUR package; others are skipped', async () => {
+  const { aurPackage } = await import('./make-aur.mjs');
+  const r = release('cypher-music-v2.141', ['CypherMusic-2.141-x86_64.AppImage', 'CypherMusic-Setup-2.141.exe']);
+  const out = aurPackage(cfg, r, await pickFiles(r), 'cd'.repeat(32));
+  assert.equal(out.pkgname, 'cypher-music-appimage');
+  assert.match(out.files.PKGBUILD, /^pkgver=2\.141$/m);
+  assert.match(out.files.PKGBUILD, new RegExp(`sha256sums=\\('${SHA}'`));
+  assert.match(out.files['.SRCINFO'], /^\tsource = CypherMusic-2\.141-x86_64\.AppImage::https:\/\/example\.test\//m);
+  const apkOnly = release('cypher-store-v1.4.1', ['CypherStore-1.4.1.apk']);
+  assert.match(aurPackage(cfg, apkOnly, await pickFiles(apkOnly), 'x').skip, /no AppImage/);
+  const hr = release('cypher-hr-v1.920.1004', ['CypherHR-1.920.1004-x86_64.AppImage']);
+  assert.match(aurPackage(cfg, hr, await pickFiles(hr), 'x').skip, /not in stores\/apps\.json/);
+});
+
 test('two files of one kind is an error, not a guess', async () => {
   await assert.rejects(build(cfg, release('cypher-tools-v1.1.0', ['A.exe', 'B.exe'])), /2 exe files/);
 });

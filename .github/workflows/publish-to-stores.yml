@@ -2,6 +2,7 @@ name: Publish to stores
 
 # A stable release goes to the stores that take the files it has:
 #   .exe      -> WinGet (pull request) and Chocolatey (push)
+#   .AppImage -> AUR (<slug>-appimage package, updated over SSH)
 #   all files -> SourceForge (upload), once the app has a SourceForge project
 #   .apk      -> listed in the run summary for the Android stores, which take
 #                uploads by hand in their own consoles
@@ -13,6 +14,9 @@ name: Publish to stores
 #   WINGET_TOKEN    classic PAT, scopes public_repo + workflow, on the account
 #                   that owns your fork of microsoft/winget-pkgs
 #   CHOCO_API_KEY   community.chocolatey.org > Account > API Keys
+#   AUR_SSH_KEY     private key whose public half is on your AUR account
+#   AUR_KNOWN_HOSTS output of `ssh-keyscan aur.archlinux.org`, checked by hand
+#                   against the fingerprints on aur.archlinux.org
 #   SF_USER         SourceForge user name
 #   SF_SSH_KEY      private key whose public half is on that SourceForge account
 #   SF_KNOWN_HOSTS  output of `ssh-keyscan frs.sourceforge.net`, checked by
@@ -45,6 +49,7 @@ jobs:
       tag: ${{ steps.make.outputs.tag }}
       version: ${{ steps.make.outputs.version }}
       exe: ${{ steps.make.outputs.exe }}
+      appimage: ${{ steps.make.outputs.appimage }}
       wingetId: ${{ steps.make.outputs.wingetId }}
       chocoId: ${{ steps.make.outputs.chocoId }}
       exeHold: ${{ steps.make.outputs.exeHold }}
@@ -122,6 +127,39 @@ jobs:
         with:
           name: chocolatey-package
           path: nupkg
+
+  aur:
+    needs: prepare
+    if: needs.prepare.outputs.listed == 'true' && needs.prepare.outputs.appimage == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - id: check
+        env:
+          AUR_SSH_KEY: ${{ secrets.AUR_SSH_KEY }}
+          AUR_KNOWN_HOSTS: ${{ secrets.AUR_KNOWN_HOSTS }}
+        run: |
+          if [ -z "$AUR_SSH_KEY" ] || [ -z "$AUR_KNOWN_HOSTS" ]; then
+            echo "::notice::AUR skipped: add AUR_SSH_KEY and AUR_KNOWN_HOSTS."; exit 0
+          fi
+          echo "go=true" >> "$GITHUB_OUTPUT"
+      - if: steps.check.outputs.go == 'true'
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - if: steps.check.outputs.go == 'true'
+        env:
+          AUR_SSH_KEY: ${{ secrets.AUR_SSH_KEY }}
+          AUR_KNOWN_HOSTS: ${{ secrets.AUR_KNOWN_HOSTS }}
+          GITHUB_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.prepare.outputs.tag }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$AUR_SSH_KEY" > ~/.ssh/aur && chmod 600 ~/.ssh/aur
+          printf '%s\n' "$AUR_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/aur -o StrictHostKeyChecking=yes"
+          git config --global user.name Kencypher
+          git config --global user.email kencypher56@gmail.com
+          bash stores/submit-aur.sh "$TAG"
 
   sourceforge:
     needs: prepare
