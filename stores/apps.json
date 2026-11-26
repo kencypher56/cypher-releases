@@ -13,7 +13,7 @@
       "name": "Cypher Music",
       "wingetId": "Kencypher.CypherMusic",
       "chocoId": "cypher-music",
-      "sourceforge": "",
+      "sourceforge": "cypher-music",
       "exe": {
         "type": "inno",
         "arpName": "Cypher Music"
@@ -35,7 +35,7 @@
       "name": "Cypher Contacts",
       "wingetId": "Kencypher.CypherContacts",
       "chocoId": "cypher-contacts",
-      "sourceforge": "",
+      "sourceforge": "cypher-contacts",
       "exe": {
         "type": "inno",
         "arpName": "Cypher Contacts"
@@ -57,7 +57,7 @@
       "name": "Cypher Expenses",
       "wingetId": "Kencypher.CypherExpenses",
       "chocoId": "cypher-expenses",
-      "sourceforge": "",
+      "sourceforge": "cypher-expenses",
       "exe": {
         "type": "inno",
         "arpName": "Cypher Expenses"
@@ -78,7 +78,7 @@
       "name": "Cypher BOT",
       "wingetId": "Kencypher.CypherBOT",
       "chocoId": "cypher-bot",
-      "sourceforge": "",
+      "sourceforge": "cypher-bot",
       "exe": {
         "type": "inno",
         "arpName": "Cypher BOT"
@@ -99,7 +99,7 @@
       "name": "Cypher Tools",
       "wingetId": "Kencypher.CypherTools",
       "chocoId": "cypher-tools",
-      "sourceforge": "",
+      "sourceforge": "cypher-tools",
       "exe": {
         "type": "inno",
         "arpName": "Cypher Tools"
@@ -121,7 +121,7 @@
       "name": "Cypher Share",
       "wingetId": "Kencypher.CypherShare",
       "chocoId": "cypher-share",
-      "sourceforge": "",
+      "sourceforge": "cypher-share",
       "exe": {
         "type": "inno",
         "arpName": "CYPHER-SHARE"
@@ -142,7 +142,7 @@
       "name": "Cypher Visualizer",
       "wingetId": "Kencypher.CypherVisualizer",
       "chocoId": "cypher-visualizer",
-      "sourceforge": "",
+      "sourceforge": "cypher-visualizer",
       "exe": {
         "type": "inno",
         "arpName": "Cypher Visualizer"
@@ -162,7 +162,7 @@
       "name": "Cypher CV",
       "wingetId": "Kencypher.CypherCV",
       "chocoId": "cypher-cv",
-      "sourceforge": "",
+      "sourceforge": "cypher-cv",
       "exe": {
         "type": "portable",
         "command": "cypher-cv"
@@ -184,7 +184,7 @@
       "name": "Cypher Printers",
       "wingetId": "Kencypher.CypherPrinters",
       "chocoId": "cypher-printers",
-      "sourceforge": "",
+      "sourceforge": "cypher-printers",
       "exe": {
         "type": "portable",
         "command": "cypher-printers"
@@ -202,7 +202,7 @@
     },
     "cypher-trainer": {
       "name": "Cypher Trainer",
-      "sourceforge": "",
+      "sourceforge": "cypher-trainer",
       "tags": [
         "games",
         "steam",
@@ -215,7 +215,7 @@
     },
     "cypher-store": {
       "name": "Cypher Store",
-      "sourceforge": "",
+      "sourceforge": "cypher-store",
       "tags": [
         "app-store",
         "updater"

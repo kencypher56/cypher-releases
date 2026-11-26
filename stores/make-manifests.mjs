@@ -152,8 +152,8 @@ Set-Content -Path "$exe.gui" -Value ''
 
 const STORES = {
   exe: ['WinGet (pull request to microsoft/winget-pkgs)', 'Chocolatey community repository', 'Uptodown (Windows, upload in the Developers Console)', 'SourceForge'],
-  appimage: ['SourceForge', 'Flathub and Snap Store: not packaged (they need their own formats)'],
-  apk: ['Uptodown (Android)', 'Huawei AppGallery', 'Samsung Galaxy Store', 'Aptoide']
+  appimage: ['AUR (<slug>-appimage)', 'SourceForge', 'Flathub: only with a manifest you write yourself (Flathub bars AI-written manifests and AI-opened pull requests)'],
+  apk: ['Uptodown (Android)', 'Huawei AppGallery', 'Samsung Galaxy Store']
 };
 
 function summary(app, version, release, files) {
