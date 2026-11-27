@@ -1,6 +1,6 @@
 # Store distribution report
 
-Updated 2026-11-27 (four apps submitted to Huawei AppGallery; WinGet validation; AUR and SourceForge prepared; Aptoide dropped at your request). **Nothing is published yet.** No listing URL exists, so the URL column is empty and Cypher Store shows no marketplace links.
+Updated 2026-11-27 (CV and Printers 1.0.1 sent to Uptodown; four apps submitted to Huawei AppGallery; WinGet validation; AUR and SourceForge prepared; Aptoide dropped at your request). **Nothing is published yet.** No listing URL exists, so the URL column is empty and Cypher Store shows no marketplace links.
 
 Author on every listing: Muhammad Waleed Amjad (Kencypher). Cypher HR is left out entirely, as instructed.
 
@@ -84,7 +84,7 @@ Counts: Published 0 · Submitted for review 28 · Awaiting credentials 19 · Man
 | Cypher Visualizer | AppImage | Snap Store | 1.1.0 | Unsupported format | — | The Snap Store takes snaps, not AppImages: needs a snapcraft.yaml with confinement and interfaces, a registered name and a store review. |
 | Cypher CV | exe (portable) | WinGet | 1.0.0 | Submitted for review | — | Pull request https://github.com/microsoft/winget-pkgs/pull/488920 is open. CLA signed and automated validation passed (2026-11-25). Waits for a moderator. |
 | Cypher CV | exe (portable) | Chocolatey | 1.0.0 | Awaiting credentials | — | Package ready in stores/chocolatey. Needs a community.chocolatey.org account and its API key as the CHOCO_API_KEY secret; a new package then waits for human moderation. |
-| Cypher CV | exe (portable) | Uptodown | 1.0.0 | Submitted for review | — | Sent to Uptodown's editors on 2026-11-25 (developer console app ID 1000969911); listing text, icon, licence, age rating and screenshots filled in. Their review takes a few days. |
+| Cypher CV | exe (portable) | Uptodown | 1.0.1 | Submitted for review | — | Sent to Uptodown's editors on 2026-11-25 (developer console app ID 1000969911). Version 1.0.1 added on 2026-11-27 from the GitHub release (CypherCV-1.0.1.exe, SHA-256 matches), Windows 10-11, English, with its changelog; it waits for the same review. |
 | Cypher CV | exe (portable) | SourceForge | 1.0.0 | Manual action required | — | Not created. SourceForge's Terms (section 10) require every file uploaded through its file release system to carry an OSI-approved open-source licence, and the Cypher apps are proprietary freeware. Possible only if you license the app as open source. |
 | Cypher CV | AppImage | SourceForge | 1.0.0 | Manual action required | — | Not created. SourceForge's Terms (section 10) require every file uploaded through its file release system to carry an OSI-approved open-source licence, and the Cypher apps are proprietary freeware. Possible only if you license the app as open source. |
 | Cypher CV | AppImage | AUR | 1.0.0 | Awaiting credentials | — | Package `cypher-cv-appimage` is generated and was test-built with makepkg. Needs your AUR account and SSH key, then `bash stores/submit-aur.sh`; the workflow updates it after that once AUR_SSH_KEY and AUR_KNOWN_HOSTS exist. |
@@ -92,7 +92,7 @@ Counts: Published 0 · Submitted for review 28 · Awaiting credentials 19 · Man
 | Cypher CV | AppImage | Snap Store | 1.0.0 | Unsupported format | — | The Snap Store takes snaps, not AppImages: needs a snapcraft.yaml with confinement and interfaces, a registered name and a store review. |
 | Cypher Printers | exe (portable) | WinGet | 1.0.0 | Submitted for review | — | Pull request https://github.com/microsoft/winget-pkgs/pull/488923 is open. CLA signed and automated validation passed (2026-11-25). Waits for a moderator. |
 | Cypher Printers | exe (portable) | Chocolatey | 1.0.0 | Awaiting credentials | — | Package ready in stores/chocolatey. Needs a community.chocolatey.org account and its API key as the CHOCO_API_KEY secret; a new package then waits for human moderation. |
-| Cypher Printers | exe (portable) | Uptodown | 1.0.0 | Submitted for review | — | Sent to Uptodown's editors on 2026-11-25 (developer console app ID 1000969916); listing text, icon, licence, age rating and screenshots filled in. Their review takes a few days. |
+| Cypher Printers | exe (portable) | Uptodown | 1.0.1 | Submitted for review | — | Sent to Uptodown's editors on 2026-11-25 (developer console app ID 1000969916). Version 1.0.1 added on 2026-11-27 from the GitHub release (CypherPrinters-1.0.1.exe, SHA-256 matches), Windows 10-11, English, with its changelog; it waits for the same review. |
 | Cypher Printers | exe (portable) | SourceForge | 1.0.0 | Manual action required | — | Not created. SourceForge's Terms (section 10) require every file uploaded through its file release system to carry an OSI-approved open-source licence, and the Cypher apps are proprietary freeware. Possible only if you license the app as open source. |
 | Cypher Printers | AppImage | SourceForge | 1.0.0 | Manual action required | — | Not created. SourceForge's Terms (section 10) require every file uploaded through its file release system to carry an OSI-approved open-source licence, and the Cypher apps are proprietary freeware. Possible only if you license the app as open source. |
 | Cypher Printers | AppImage | AUR | 1.0.0 | Awaiting credentials | — | Package `cypher-printers-appimage` is generated and was test-built with makepkg. Needs your AUR account and SSH key, then `bash stores/submit-aur.sh`; the workflow updates it after that once AUR_SSH_KEY and AUR_KNOWN_HOSTS exist. |
@@ -105,7 +105,7 @@ Counts: Published 0 · Submitted for review 28 · Awaiting credentials 19 · Man
 | Cypher Store | apk | Uptodown | 1.4.1 | Manual action required | — | Saved as a draft (app ID 1000969450). Uptodown will not take it for review without at least three screenshots, and none of the store app exist yet: take three on your phone, add them under Screenshots, then press Submit for review. |
 | Cypher Store | apk | Huawei AppGallery | 1.4.1 | Manual action required | — | Not recommended: Cypher Store installs other apps (REQUEST_INSTALL_PACKAGES), which these stores normally refuse. Also needs a privacy policy URL. |
 | Cypher Store | apk | Samsung Galaxy Store | 1.4.1 | Manual action required | — | Skipped at your request (2026-11-27): the Seller Portal sign-up asked for fees. |
-| Cypher-ZKTeko | zip, tar.gz | all | 2.0.6 | Unsupported format | — | Ships no .exe, .AppImage or .apk. |
+| Cypher-ZKTeko | zip, tar.gz | all | 2.0.7 | Unsupported format | — | Ships no .exe, .AppImage or .apk. |
 
 ## What was verified
 
