@@ -81,7 +81,7 @@ Drafts exist for Cypher Contacts, Cypher Expenses, Cypher Tools and CYPHER-SHARE
 
 All four drafts are complete: descriptions, category, compatible device (phone), icon, screenshots, APK (SHA-256 checked before upload), countries (all except the Chinese mainland, which needs a software copyright certificate), the privacy policy URL, privacy tags (no personal data collected), the AI declaration, reviewer notes and the age rating (Contacts, Tools and Share 3+, Expenses 16+, which is Huawei's rating for finance apps).
 
-Left for you: press **Submit** on each app's Draft version page once https://cypherstore.vercel.app/privacy loads (it is in the portfolio `feature/privacy` branch, not pushed yet).
+All four were submitted for review on 2026-11-27 and show Reviewing. Nothing is left for you until Huawei replies; answer any reviewer question in AppGallery Connect.
 
 ## Samsung Galaxy Store (Android)
 
