@@ -42,21 +42,9 @@ Every listing names you as Muhammad Waleed Amjad (Kencypher). To keep an app's W
 
 3. New packages wait for human moderation before they are public.
 
-## SourceForge (Windows, Linux and Android files)
+## SourceForge (not used)
 
-`stores/apps.json` already names one project per app, after its slug (`cypher-music`, `cypher-contacts` and so on). All eleven names were free on 26 November 2026.
-
-1. Make an account, then create each project under exactly that name. Cypher HR gets none.
-2. Add an SSH public key under Account Settings › SSH Settings.
-3. Upload the releases that already exist, from this folder:
-
-   ```bash
-   SF_USER=yourname bash stores/submit-sourceforge.sh
-   ```
-
-4. For every release after that, store the secrets: `SF_USER` (your user name), `SF_SSH_KEY` (the private key), `SF_KNOWN_HOSTS` (the output of `ssh-keyscan frs.sourceforge.net`, checked against SourceForge's published fingerprints) and, optionally, `SF_API_KEY` (Account › Release API key, which sets the default downloads). The workflow then uploads each new release.
-
-Files already on SourceForge are never replaced.
+SourceForge's Terms of Use (section 10) require everything uploaded through its file release system to be licensed under an OSI-approved open-source licence, granted to Slashdot Media and every downloader. The Cypher apps are proprietary freeware, so no project was created. `stores/submit-sourceforge.sh` and the workflow's SourceForge step stay idle while the SF_* secrets do not exist; use them only if an app becomes open source.
 
 ## AUR (Linux)
 
@@ -83,11 +71,9 @@ All four drafts are complete: descriptions, category, compatible device (phone),
 
 All four were submitted for review on 2026-11-27 and show Reviewing. Nothing is left for you until Huawei replies; answer any reviewer question in AppGallery Connect.
 
-## Samsung Galaxy Store (Android)
+## Samsung Galaxy Store (skipped)
 
-1. Sign up in the Seller Portal (seller.samsungapps.com) as a private seller.
-2. Same four apps as Huawei, same privacy URL. Icons are 512 × 512, in `~/Desktop/builds/<app>/icon`.
-3. Check the minimum screenshot count when you get there: Share has only three phone screenshots.
+Skipped at your request on 2026-11-27: the Seller Portal sign-up asked for fees.
 
 ## Flathub and Snap Store (Linux)
 
